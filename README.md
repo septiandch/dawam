@@ -36,3 +36,9 @@ Run `pnpm run format` to format source files, or `pnpm run format:check` to veri
 ## UI and theme
 
 UI primitives in `src/lib/components/ui/` are generated from the shadcn-svelte Vega registry. Buttons, cards, badges, dialogs, switches, selects, labels, and separators use the shared theme. `src/app.css` contains the local font faces, shadcn color/radius tokens, and document defaults only. Layout, typography, responsive behavior, and decorative elements use Tailwind utilities in their components. The `morning`, `evening`, `gold`, and `hero` color tokens preserve the original palette. Adjust colors in `:root` (and `.dark`) to update the app consistently.
+
+## Deploy to Vercel
+
+The checked-in `vercel.json` deploys the existing adapter-static output. It sets the framework preset to Other, runs `pnpm run build`, and serves `build/`. Trailing slashes match the prerendered reading routes. Set the Vercel Root Directory to the folder containing `package.json` and `vercel.json` (the repository root for this project).
+
+Commit and push `vercel.json`, then deploy that commit. Its output-directory setting overrides the dashboard's `public` value. No `public/` folder or Vercel adapter is required for this static app. If configuring the dashboard manually, use Framework Preset **Other**, Build Command **pnpm run build**, and Output Directory **build**.
