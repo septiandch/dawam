@@ -132,6 +132,19 @@ test('reader progresses through every card and supports returning to previous ca
     await expect(position).toHaveText(`${card} dari 21`);
     await expect(page.locator('article')).toHaveCount(1);
     titles.add(await page.locator('article h2').innerText());
+
+    if (card <= 5) {
+      const arabicText = page.locator('p[lang="ar"]');
+      const markers = arabicText.getByRole('img');
+
+      await expect(markers).toHaveText(['١', '٢', '٣', '٤', '٥', '٦'].slice(0, card + 1));
+      await expect(arabicText).not.toContainText(/\(\d+\)/);
+
+      if (card === 3) {
+        await page.screenshot({ path: 'test-results/reader-ayah-markers-mobile.png' });
+      }
+    }
+
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
       true,
     );
@@ -221,3 +234,60 @@ for (const mode of ['standalone', 'ios'] as const) {
     await expect(page.getByRole('button', { name: 'Pasang aplikasi' })).toHaveCount(0);
   });
 }
+
+test('source tooltip is discoverable by hover and keyboard after its first appearance', async ({
+  page,
+}) => {
+  await page.goto('/read/morning/');
+  await page.getByRole('button', { name: 'Berikutnya' }).click();
+
+  const info = page.getByRole('button', { name: 'Sumber Ayat al-Kursi' });
+  const tooltip = page.getByRole('tooltip');
+
+  await expect(tooltip).toHaveText('Ketuk atau klik untuk melihat dalil dan keutamaan.');
+  await page.keyboard.press('Escape');
+  await expect(tooltip).toHaveCount(0);
+
+  await info.hover();
+  await expect(tooltip).toBeVisible();
+  await page.mouse.move(0, 0);
+  await expect(tooltip).toHaveCount(0);
+
+  await page.getByRole('region', { name: 'Kartu 2 dari 21', exact: true }).focus();
+  await page.keyboard.press('Tab');
+  await expect(info).toBeFocused();
+  await expect(tooltip).toBeVisible();
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await expect(tooltip).toHaveCount(0);
+});
+
+test.describe('source hint on touch screens', () => {
+  test.use({ hasTouch: true, viewport: { width: 320, height: 740 } });
+
+  test('shows once, fits on mobile, and opens the dialog with one tap', async ({ page }) => {
+    await page.goto('/read/morning/');
+    await page.getByRole('button', { name: 'Berikutnya' }).tap();
+
+    const tooltip = page.getByRole('tooltip');
+    await expect(tooltip).toBeVisible();
+    const bounds = await tooltip.boundingBox();
+    expect(bounds).not.toBeNull();
+    expect(bounds!.x).toBeGreaterThanOrEqual(0);
+    expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(320);
+    await page.screenshot({ path: 'test-results/source-hint-mobile.png' });
+
+    await page.getByRole('button', { name: 'Sumber Ayat al-Kursi' }).tap();
+    await expect(page.getByRole('dialog')).toContainText('QS. Al-Baqarah (2): 255');
+    await expect(tooltip).toHaveCount(0);
+    await page.getByRole('button', { name: 'Tutup dialog' }).tap();
+
+    await page.getByRole('button', { name: 'Berikutnya' }).tap();
+    await expect(page.getByRole('heading', { name: 'Al-Ikhlas', exact: true })).toBeVisible();
+    await expect(tooltip).toHaveCount(0);
+
+    await page.reload();
+    await page.getByRole('button', { name: 'Berikutnya' }).tap();
+    await expect(tooltip).toHaveCount(0);
+  });
+});

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Repeat2 } from '@lucide/svelte';
 
+  import ArabicText from './ArabicText.svelte';
   import SourceDialog from './SourceDialog.svelte';
   import { Badge } from '$lib/components/ui/badge';
 
@@ -38,7 +39,7 @@
     lang="ar"
     dir="rtl"
   >
-    {entry.arabic}
+    <ArabicText text={entry.arabic} />
   </p>
 
   {#if entry.repetitions}

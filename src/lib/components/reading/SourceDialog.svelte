@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Info, ExternalLink } from '@lucide/svelte';
 
+  import HintTooltip from '$lib/components/HintTooltip.svelte';
   import { Button, buttonVariants } from '$lib/components/ui/button';
   import * as Dialog from '$lib/components/ui/dialog';
   import { Separator } from '$lib/components/ui/separator';
@@ -8,6 +9,8 @@
   import type { ReadingEntry } from '$lib/types/content';
 
   let { entry }: { entry: ReadingEntry } = $props();
+
+  let dialogOpen = $state(false);
 
   function virtueSources(sourceIds: string[]) {
     return entry.sources
@@ -17,13 +20,22 @@
   }
 </script>
 
-<Dialog.Root>
-  <Dialog.Trigger
-    class={buttonVariants({ variant: 'ghost', size: 'icon', class: 'rounded-full' })}
-    aria-label={'Sumber ' + entry.title}
+<Dialog.Root bind:open={dialogOpen}>
+  <HintTooltip
+    message="Ketuk atau klik untuk melihat dalil dan keutamaan."
+    storageKey="dawam-source-hint-seen"
+    disabled={dialogOpen}
   >
-    <Info class="size-5" />
-  </Dialog.Trigger>
+    {#snippet children({ props })}
+      <Dialog.Trigger
+        {...props}
+        class={buttonVariants({ variant: 'ghost', size: 'icon', class: 'rounded-full' })}
+        aria-label={'Sumber ' + entry.title}
+      >
+        <Info class="size-5" />
+      </Dialog.Trigger>
+    {/snippet}
+  </HintTooltip>
 
   <Dialog.Content>
     <Dialog.Header>
