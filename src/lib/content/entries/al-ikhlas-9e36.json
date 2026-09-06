@@ -1,0 +1,32 @@
+{
+  "id": "9e3658b41188",
+  "slug": "al-ikhlas-9e36",
+  "type": "dhikr",
+  "title": "Al-Ikhlas",
+  "arabic": "قُلْ هُوَ ٱللَّهُ أَحَدٌ (1) ٱللَّهُ ٱلصَّمَدُ (2) لَمْ يَلِدْ وَلَمْ يُولَدْ (3) وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ (4)",
+  "transliteration": "Qul huwallāhu aḥad (1) Allāhuṣ ṣamad (2) lam yalid wa lam yụlad (3) wa lam yakul lahụ kufuwan aḥad (4)",
+  "translation": "Katakanlah: \"Dialah Allah, Yang Maha Esa. Allah adalah Tuhan yang bergantung kepada-Nya segala sesuatu. Dia tiada beranak dan tidak pula diperanakkan, dan tidak ada seorangpun yang setara dengan Dia\".",
+  "repetitions": 3,
+  "sources": [
+    {
+      "id": "9e3658b41188-source",
+      "type": "hadith",
+      "label": "HR. Abu Dawud no. 5082",
+      "url": "https://sunnah.com/abudawud:5082"
+    },
+    {
+      "id": "9e3658b41188-quran",
+      "type": "quran",
+      "label": "QS. Al-Ikhlas (112:1–4)"
+    }
+  ],
+  "virtues": [
+    {
+      "text": "Rasulullah shallallahu 'alaihi wa sallam bersabda: Katakanlah (bacalah surat), Qulhuwallahu ahad, dan Al-Muawwidzatain (Al-Falaq dan An-Naas) ketika petang dan pagi tiga kali, maka dengan ayat ini akan mencukupkanmu (menjagamu) dari segala sesuatu.",
+      "sourceIds": [
+        "9e3658b41188-source"
+      ]
+    }
+  ],
+  "order": 2
+}

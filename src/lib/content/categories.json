@@ -1,0 +1,56 @@
+[
+  {
+    "id": "morning",
+    "slug": "morning",
+    "title": "Dzikir Pagi",
+    "description": "Awali hari dengan dzikir dan doa, memohon kebaikan serta perlindungan Allah.",
+    "itemIds": [
+      "fd44720bd528",
+      "9e3658b41188",
+      "bcc8221c0eac",
+      "6695e1d875f5",
+      "f0a7a7737680",
+      "48161908ec59",
+      "06d7accc707a",
+      "522207d971db",
+      "c76c9741569c",
+      "49a35ba8da62",
+      "4fafca1453bc",
+      "885c435a1217",
+      "f4c91517d983",
+      "f2c9df65bdae",
+      "d18cd35487c7",
+      "b6bcb28fc42c",
+      "d9614b347c5c",
+      "cbb06b96b1c1",
+      "5df5734e5a81"
+    ]
+  },
+  {
+    "id": "evening",
+    "slug": "evening",
+    "title": "Dzikir Petang",
+    "description": "Tutup hari dengan mengingat Allah, bersyukur dan memohon perlindungan-Nya.",
+    "itemIds": [
+      "fd44720bd528",
+      "9e3658b41188",
+      "bcc8221c0eac",
+      "6695e1d875f5",
+      "d7ea6c6f8e90",
+      "d0a51ee42c63",
+      "06d7accc707a",
+      "522207d971db",
+      "c76c9741569c",
+      "49a35ba8da62",
+      "4fafca1453bc",
+      "885c435a1217",
+      "f4c91517d983",
+      "486452aaee1b",
+      "b150a96ea2e9",
+      "b6bcb28fc42c",
+      "b25f0503ec7b",
+      "347ab1665850",
+      "3bec0c93d4f7"
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "6695e1d875f5",
+  "slug": "an-naas-6695",
+  "type": "dhikr",
+  "title": "An-Naas",
+  "arabic": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ (1) مَلِكِ ٱلنَّاسِ (2) إِلَٰهِ ٱلنَّاسِ (3) مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ (4) ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ (5) مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ (6)",
+  "transliteration": "Qul a'ụżu birabbin nās (1) malikin nās (2) ilāhin nās (3) min syarril waswāsil khannās (4) allażī yuwaswisu fī ṣudụrin nās (5) minal jinnati wan nās (6)",
+  "translation": "Katakanlah: “Aku berlindung kepada Tuhan (yang memelihara dan menguasai) manusia. (1) Raja manusia. (2) Sembahan manusia. (3) Dari kejahatan (bisikan) syaitan yang biasa bersembunyi, (4) yang membisikkan (kejahatan) ke dalam dada manusia, (5) dari (golongan) jin dan manusia. (6)",
+  "repetitions": 3,
+  "sources": [
+    {
+      "id": "6695e1d875f5-source",
+      "type": "hadith",
+      "label": "HR. Abu Dawud no. 5082",
+      "url": "https://sunnah.com/abudawud:5082"
+    },
+    {
+      "id": "6695e1d875f5-quran",
+      "type": "quran",
+      "label": "QS. An-Naas (114:1–6)"
+    }
+  ],
+  "virtues": [
+    {
+      "text": "Rasulullah shallallahu 'alaihi wa sallam bersabda: Katakanlah (bacalah surat), Qulhuwallahu ahad, dan Al-Muawwidzatain (Al-Falaq dan An-Naas) ketika petang dan pagi tiga kali, maka dengan ayat ini akan mencukupkanmu (menjagamu) dari segala sesuatu.",
+      "sourceIds": [
+        "6695e1d875f5-source"
+      ]
+    }
+  ],
+  "order": 4
+}

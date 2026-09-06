@@ -1,0 +1,11 @@
+node_modules/
+.svelte-kit/
+build/
+.content-source/
+test-results/
+playwright-report/
+package-lock.json
+src/lib/content/entries/
+src/lib/content/categories.json
+
+pnpm-lock.yaml

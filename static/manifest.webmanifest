@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Dawam — Dzikir Pagi dan Petang",
+  "short_name": "Dawam",
+  "description": "Teman dalam mengingat-Nya. Dzikir pagi dan petang, tersedia offline.",
+  "lang": "id-ID",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fafbf8",
+  "theme_color": "#284e40",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "06d7accc707a",
+  "slug": "sayyid-al-istighfar-06d7",
+  "type": "dhikr",
+  "title": "Sayyid al-Istighfar",
+  "arabic": "اَللَّهُمَّ أَنْتَ رَبِّيْ ، لَا إِلٰـهَ إِلاَّ أَنْتَ خَلَقْتَنِيْ وَأَنَا عَبْدُكَ ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ ، أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ ، أَبُوْءُ لَكَ بِنِعْمتِكَ عَلَيَّ ، وَأَبُوْءُ بِذَنْبِيْ فَاغْفِرْ لِيْ ، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ",
+  "transliteration": "Allahumma anta rabbī lā ilāha illā anta khalaqtanī wa anna 'abduka wa anā 'alā 'ahdika wa wa'dika mastatha'tu a'ūżu bika min syarri mā shana'tu abū u laka bini' matika 'alayya wa abū u biżanbī faghfir lī fa innahu lā yaghfiruż żunūba illa anta",
+  "translation": "Ya Allah, Engkau adalah Rabb-ku, tidak ada Ilah (yang berhak diibadahi dengan benar) kecuali Engkau, Engkau-lah yang menciptakanku. Aku adalah hamba-Mu. Aku akan setia pada perjanjianku dengan-Mu semampuku. Aku berlindung kepada-Mu dari kejelekan (apa) yang kuperbuat. Aku mengakui nikmat-Mu (yang diberikan) kepadaku dan aku mengakui dosaku, oleh karena itu, ampunilah aku. Sesungguhnya tidak ada yang dapat mengampuni dosa kecuali Engkau.",
+  "repetitions": 1,
+  "sources": [
+    {
+      "id": "06d7accc707a-source",
+      "type": "hadith",
+      "label": "HR. al-Bukhari No. 6306, 6323, Ahmad IV/122-125, an-Nasa'i VIII/279-280",
+      "url": "https://sunnah.com/bukhari:6306"
+    }
+  ],
+  "virtues": [
+    {
+      "text": "Barang siapa yang membacanya dengan yakin ketika petang hari, kemudian dia meninggal, maka ia akan masuk surga, demikian juga jika (dibaca) pada pagi hari.",
+      "sourceIds": [
+        "06d7accc707a-source"
+      ]
+    }
+  ],
+  "order": 7
+}

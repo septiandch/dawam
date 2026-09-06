@@ -1,0 +1,19 @@
+{
+  "id": "cbb06b96b1c1",
+  "slug": "tasbih-dan-tahmid-harian-cbb0",
+  "type": "dhikr",
+  "title": "Tasbih dan Tahmid Harian",
+  "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
+  "transliteration": "Subhānallahi wa bihamdihi",
+  "translation": "Maha Suci Allah, aku memuji-Nya.",
+  "repetitions": 100,
+  "sources": [
+    {
+      "id": "cbb06b96b1c1-source",
+      "type": "hadith",
+      "label": "HR. Muslim No. 2691 dan No. 2692, dari Abu Hurairah radhiyallahu 'anhu Syarah Muslim XVII/17-18, Shahiih at-Targhiib wat Tarhiib 1/413 No. 653"
+    }
+  ],
+  "virtues": [],
+  "order": 18
+}

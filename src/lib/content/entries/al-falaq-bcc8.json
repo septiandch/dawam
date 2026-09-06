@@ -1,0 +1,32 @@
+{
+  "id": "bcc8221c0eac",
+  "slug": "al-falaq-bcc8",
+  "type": "dhikr",
+  "title": "Al-Falaq",
+  "arabic": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ (1) مِن شَرِّ مَا خَلَقَ (2) وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ (3) وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ (4) وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ (5)",
+  "transliteration": "Qul a'ụżu birabbil falaq (1) min syarri mā khalaq (2) wa min syarri gāsiqin iżā waqab (3) wa min syarrin naffāṡāti fil 'uqad (4) wa min syarri ḥāsidin iżā ḥasad (5)",
+  "translation": "Katakanlah: \"Aku berlindung kepada Tuhan Yang Menguasai subuh, dari kejahatan makhluk-Nya, dan dari kejahatan malam apabila telah gelap gulita, dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul, dan dari kejahatan pendengki bila ia dengki\".",
+  "repetitions": 3,
+  "sources": [
+    {
+      "id": "bcc8221c0eac-source",
+      "type": "hadith",
+      "label": "HR. Abu Dawud no. 5082",
+      "url": "https://sunnah.com/abudawud:5082"
+    },
+    {
+      "id": "bcc8221c0eac-quran",
+      "type": "quran",
+      "label": "QS. Al-Falaq (113:1–5)"
+    }
+  ],
+  "virtues": [
+    {
+      "text": "Rasulullah shallallahu 'alaihi wa sallam bersabda: Katakanlah (bacalah surat), Qulhuwallahu ahad, dan Al-Muawwidzatain (Al-Falaq dan An-Naas) ketika petang dan pagi tiga kali, maka dengan ayat ini akan mencukupkanmu (menjagamu) dari segala sesuatu.",
+      "sourceIds": [
+        "bcc8221c0eac-source"
+      ]
+    }
+  ],
+  "order": 3
+}

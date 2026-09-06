@@ -1,0 +1,231 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Fonts are bundled locally so the reader also works offline. */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('@fontsource/dm-sans/files/dm-sans-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@fontsource/lora/files/lora-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('@fontsource/amiri/files/amiri-arabic-400-normal.woff2') format('woff2');
+}
+
+/* Dawam's palette shared by shadcn components and Tailwind utilities. */
+:root {
+  --radius: 0.75rem;
+  --background: #fafbf8;
+  --foreground: #293d35;
+  --card: #ffffff;
+  --card-foreground: #293d35;
+  --popover: #fafbf8;
+  --popover-foreground: #293d35;
+  --primary: #284e40;
+  --primary-foreground: #ffffff;
+  --secondary: #eef2e9;
+  --secondary-foreground: #5f7056;
+  --muted: #f0f3eb;
+  --muted-foreground: #626e65;
+  --accent: #e7eddf;
+  --accent-foreground: #284e40;
+  --destructive: #b33c32;
+  --border: #e1e6dd;
+  --input: #d6ded0;
+  --ring: #b88536;
+  --gold: #a78d55;
+  --gold-light: #d3c594;
+  --hero: #284e40;
+  --hero-foreground: #ffffff;
+  --hero-muted: #d5dfcc;
+  --morning: #f4f2e9;
+  --morning-accent: #ebe5d1;
+  --morning-foreground: #8a6b31;
+  --morning-border: #e5e4d7;
+  --evening: #edf1eb;
+  --evening-accent: #dfe7dd;
+  --evening-foreground: #5e775b;
+  --evening-border: #dfe6dc;
+  --chart-1: #284e40;
+  --chart-2: #5e775b;
+  --chart-3: #a78d55;
+  --chart-4: #8b9d7e;
+  --chart-5: #b7c4a9;
+  --sidebar: #f0f3eb;
+  --sidebar-foreground: #293d35;
+  --sidebar-primary: #284e40;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e7eddf;
+  --sidebar-accent-foreground: #284e40;
+  --sidebar-border: #e1e6dd;
+  --sidebar-ring: #b88536;
+}
+
+.dark {
+  --background: #17271f;
+  --foreground: #e7edde;
+  --card: #20362a;
+  --card-foreground: #e7edde;
+  --popover: #20362a;
+  --popover-foreground: #e7edde;
+  --primary: #b7c9a7;
+  --primary-foreground: #17271f;
+  --secondary: #2c4232;
+  --secondary-foreground: #cfdbc5;
+  --muted: #293d30;
+  --muted-foreground: #b7c3b1;
+  --accent: #364d39;
+  --accent-foreground: #e7edde;
+  --destructive: #ec8b7d;
+  --border: #3c5140;
+  --input: #4b624f;
+  --ring: #c9ae78;
+  --gold: #c9ae78;
+  --morning: #39372a;
+  --morning-accent: #504930;
+  --morning-foreground: #e0ca91;
+  --morning-border: #514d39;
+  --evening: #293e30;
+  --evening-accent: #39543d;
+  --evening-foreground: #c2d7b8;
+  --evening-border: #3c5140;
+  --sidebar: #20362a;
+  --sidebar-foreground: #e7edde;
+  --sidebar-primary: #b7c9a7;
+  --sidebar-primary-foreground: #17271f;
+  --sidebar-accent: #364d39;
+  --sidebar-accent-foreground: #e7edde;
+  --sidebar-border: #3c5140;
+  --sidebar-ring: #c9ae78;
+}
+
+@theme inline {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-serif: 'Lora', serif;
+  --font-arabic: 'Amiri', serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-hero: var(--hero);
+  --color-hero-foreground: var(--hero-foreground);
+  --color-hero-muted: var(--hero-muted);
+  --color-morning: var(--morning);
+  --color-morning-accent: var(--morning-accent);
+  --color-morning-foreground: var(--morning-foreground);
+  --color-morning-border: var(--morning-border);
+  --color-evening: var(--evening);
+  --color-evening-accent: var(--evening-accent);
+  --color-evening-foreground: var(--evening-foreground);
+  --color-evening-border: var(--evening-border);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Only shared document defaults live here; component styling uses utilities. */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  a,
+  button,
+  input,
+  select {
+    @apply touch-manipulation;
+  }
+
+  a:focus-visible {
+    @apply rounded-sm outline-2 outline-offset-4 outline-ring;
+  }
+
+  button:not(:disabled),
+  [role='switch']:not([data-disabled]) {
+    @apply cursor-pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      @apply scroll-auto! animate-none! transition-none!;
+    }
+  }
+}
