@@ -26,6 +26,9 @@
 
   let installEvent = $state<InstallPromptEvent | null>(null);
   let installing = $state(false);
+  let installed = $state(false);
+
+  const installationKey = 'dawam-installed';
 
   const hadith = $derived(hadiths[dailyIndex(today, hadiths.length)]);
 
@@ -40,7 +43,25 @@
 
   function captureInstallPrompt(event: Event) {
     event.preventDefault();
+    setInstalled(false);
     installEvent = event as InstallPromptEvent;
+  }
+
+  function setInstalled(value: boolean) {
+    installed = value;
+
+    if (value) installEvent = null;
+
+    try {
+      if (value) localStorage.setItem(installationKey, 'true');
+      else localStorage.removeItem(installationKey);
+    } catch {
+      // Installation visibility still works when storage is unavailable.
+    }
+  }
+
+  function markInstalled() {
+    setInstalled(true);
   }
 
   function trackServiceWorker(registration: ServiceWorkerRegistration) {
@@ -59,15 +80,19 @@
   }
 
   async function install() {
-    if (!installEvent) {
+    const promptEvent = installEvent;
+
+    if (!promptEvent) {
       return;
     }
 
     installing = true;
 
     try {
-      await installEvent.prompt();
-      await installEvent.userChoice;
+      await promptEvent.prompt();
+      const choice = await promptEvent.userChoice;
+
+      if (choice.outcome === 'accepted') markInstalled();
       installEvent = null;
     } finally {
       installing = false;
@@ -83,7 +108,24 @@
   }
 
   onMount(() => {
+    const standalone = window.matchMedia('(display-mode: standalone), (display-mode: minimal-ui)');
+    const iosNavigator = navigator as Navigator & { standalone?: boolean };
+
+    function checkDisplayMode() {
+      if (standalone.matches || iosNavigator.standalone === true) markInstalled();
+    }
+
+    try {
+      installed = localStorage.getItem(installationKey) === 'true';
+    } catch {
+      // Fall back to the current display mode.
+    }
+
+    checkDisplayMode();
     ready = true;
+
+    standalone.addEventListener('change', checkDisplayMode);
+    window.addEventListener('appinstalled', markInstalled);
 
     const timer = setInterval(() => (today = new Date()), 30000);
 
@@ -95,6 +137,8 @@
 
     return () => {
       clearInterval(timer);
+      standalone.removeEventListener('change', checkDisplayMode);
+      window.removeEventListener('appinstalled', markInstalled);
       window.removeEventListener('beforeinstallprompt', captureInstallPrompt);
     };
   });
@@ -190,7 +234,9 @@
     </div>
   </section>
 
-  <InstallCard canInstall={!!installEvent} {installing} oninstall={install} />
+  {#if ready && !installed}
+    <InstallCard canInstall={!!installEvent} {installing} oninstall={install} />
+  {/if}
 
   {#if update}
     <div class="mt-4 text-center">
