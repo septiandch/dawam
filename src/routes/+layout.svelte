@@ -2,11 +2,19 @@
   import '../app.css';
   import { onMount } from 'svelte';
 
-  import { loadPreferences } from '$lib/preferences.svelte';
+  import { loadPreferences, preferences } from '$lib/preferences.svelte';
 
   let { children } = $props();
 
-  onMount(loadPreferences);
+  let ready = $state(false);
+  onMount(() => {
+    loadPreferences();
+    ready = true;
+  });
+
+  $effect(() => {
+    if (ready) document.documentElement.classList.toggle('dark', preferences.darkMode);
+  });
 </script>
 
 <a

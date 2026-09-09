@@ -47,6 +47,7 @@
 
 /* Dawam's palette shared by shadcn components and Tailwind utilities. */
 :root {
+  color-scheme: light;
   --radius: 0.75rem;
   --background: #fafbf8;
   --foreground: #293d35;
@@ -95,40 +96,42 @@
 }
 
 .dark {
-  --background: #17271f;
+  color-scheme: dark;
+  --background: #0b110e;
   --foreground: #e7edde;
-  --card: #20362a;
+  --card: #121c16;
   --card-foreground: #e7edde;
-  --popover: #20362a;
+  --popover: #121c16;
   --popover-foreground: #e7edde;
   --primary: #b7c9a7;
-  --primary-foreground: #17271f;
-  --secondary: #2c4232;
+  --primary-foreground: #0b110e;
+  --secondary: #1c2920;
   --secondary-foreground: #cfdbc5;
-  --muted: #293d30;
+  --muted: #18231c;
   --muted-foreground: #b7c3b1;
-  --accent: #364d39;
+  --accent: #25372a;
   --accent-foreground: #e7edde;
   --destructive: #ec8b7d;
-  --border: #3c5140;
-  --input: #4b624f;
+  --border: #2c3d30;
+  --input: #3b5140;
   --ring: #c9ae78;
   --gold: #c9ae78;
-  --morning: #39372a;
-  --morning-accent: #504930;
+  --hero: #172b20;
+  --morning: #211f17;
+  --morning-accent: #332e1f;
   --morning-foreground: #e0ca91;
-  --morning-border: #514d39;
-  --evening: #293e30;
-  --evening-accent: #39543d;
+  --morning-border: #393524;
+  --evening: #16231b;
+  --evening-accent: #24382a;
   --evening-foreground: #c2d7b8;
-  --evening-border: #3c5140;
-  --sidebar: #20362a;
+  --evening-border: #2c3d30;
+  --sidebar: #121c16;
   --sidebar-foreground: #e7edde;
   --sidebar-primary: #b7c9a7;
-  --sidebar-primary-foreground: #17271f;
-  --sidebar-accent: #364d39;
+  --sidebar-primary-foreground: #0b110e;
+  --sidebar-accent: #25372a;
   --sidebar-accent-foreground: #e7edde;
-  --sidebar-border: #3c5140;
+  --sidebar-border: #2c3d30;
   --sidebar-ring: #c9ae78;
 }
 

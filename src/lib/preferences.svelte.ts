@@ -1,10 +1,12 @@
 export const preferences = $state({
+  darkMode: false,
   showTransliteration: true,
   showTranslation: true,
   arabicFontScale: 'md',
 });
 
 export function loadPreferences() {
+  preferences.darkMode = document.documentElement.classList.contains('dark');
   try {
     const storedPreferences = JSON.parse(localStorage.getItem('dawam-preferences') || '{}');
 

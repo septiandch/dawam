@@ -4,6 +4,7 @@
 
   import AppFooter from '$lib/components/AppFooter.svelte';
   import Settings from '$lib/components/Settings.svelte';
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
   import CategoryCard from '$lib/components/home/CategoryCard.svelte';
   import HadithHero from '$lib/components/home/HadithHero.svelte';
   import InstallCard from '$lib/components/home/InstallCard.svelte';
@@ -162,19 +163,26 @@
     class="flex items-center gap-2.5 text-[30px] font-semibold tracking-[-2px] md:text-[35px]"
     aria-label="Dawam beranda"
   >
-    <span class="text-4xl font-normal leading-none text-primary md:text-[43px]" aria-hidden="true">
+    <span
+      class="text-4xl font-normal leading-none text-primary md:text-[43px] tracking-tight"
+      aria-hidden="true"
+    >
       ✳
     </span>
+
     <span>
       dawam
-      <span class="text-gold">.</span>
+      <span class="text-gold -ml-1">.</span>
     </span>
   </a>
   <div class="flex items-center gap-7">
     <span class="hidden text-[10px] tracking-[0.17em] text-muted-foreground md:inline">
       SEJENAK UNTUK MENGINGAT-NYA
     </span>
-    <Settings />
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+      <Settings />
+    </div>
   </div>
 </header>
 

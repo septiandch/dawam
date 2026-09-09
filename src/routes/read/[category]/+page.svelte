@@ -2,6 +2,7 @@
   import { ArrowLeft } from '@lucide/svelte';
 
   import Settings from '$lib/components/Settings.svelte';
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
   import CardSequence from '$lib/components/reading/CardSequence.svelte';
   import ReadingOpening from '$lib/components/reading/ReadingOpening.svelte';
   import ReadingClosing from '$lib/components/reading/ReadingClosing.svelte';
@@ -42,14 +43,17 @@
     <Separator orientation="vertical" class="hidden h-6 md:block" />
     <span>{data.category.title}</span>
     <div class="flex-1"></div>
-    <Settings />
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+      <Settings />
+    </div>
   </div>
 </header>
 
 <div class="pb-[calc(5rem+env(safe-area-inset-bottom))]">
   <main id="main" class="mx-auto max-w-200 px-4 py-5 md:px-6 md:py-8">
     {#key data.category.slug}
-      <CardSequence total={data.entries.length + 2}>
+      <CardSequence readingCount={data.entries.length}>
         {#snippet children(index)}
           {#if index === 0}
             <ReadingOpening category={data.category} count={data.entries.length} />

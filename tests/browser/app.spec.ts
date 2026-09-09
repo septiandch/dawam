@@ -5,17 +5,16 @@ test('home, ordered reading, accessible dialog, and persisted preferences', asyn
   await expect(page.getByRole('heading', { name: 'Dzikir harian' })).toBeVisible();
   await page.getByRole('link', { name: /MENYAMBUT HARI/ }).click();
   await expect(page).toHaveURL(/read\/morning\//);
-  await expect(page.getByRole('status')).toHaveText('1 dari 21');
+  await expect(page.getByRole('status')).toHaveText('Pembuka');
   await expect(page.locator('article')).toHaveCount(0);
   await page.getByRole('button', { name: 'Berikutnya' }).click();
   await expect(page.locator('article')).toHaveCount(1);
   await expect(page.locator('article').first()).toContainText('Ayat al-Kursi');
   await expect(page.locator('p[lang="ar"]').first()).toHaveAttribute('dir', 'rtl');
-  const info = page.getByRole('button', { name: 'Sumber Ayat al-Kursi' });
-  await info.click();
-  await expect(page.getByRole('dialog')).toContainText('QS. Al-Baqarah (2): 255');
-  await page.keyboard.press('Escape');
-  await expect(info).toBeFocused();
+  await expect(
+    page.getByRole('region', { name: 'Dalil', exact: true }).locator('blockquote'),
+  ).toContainText('QS. Al-Baqarah (2): 255');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   await page.getByRole('button', { name: 'Pengaturan bacaan' }).click();
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.screenshot({ path: 'test-results/settings-desktop.png', animations: 'disabled' });
@@ -64,7 +63,7 @@ test('both collections and fonts available offline after home load', async ({ pa
   await context.setOffline(true);
   for (const category of ['morning', 'evening']) {
     await page.goto(`/read/${category}/`);
-    await expect(page.getByRole('status')).toHaveText('1 dari 21');
+    await expect(page.getByRole('status')).toHaveText('Pembuka');
     await page.getByRole('button', { name: 'Berikutnya' }).click();
     await expect(page.locator('article')).toHaveCount(1);
     await page.evaluate(() => document.fonts.ready);
@@ -106,21 +105,21 @@ test('reader progresses through every card and supports returning to previous ca
   const previous = page.getByRole('button', { name: 'Sebelumnya' });
   const position = page.getByRole('status');
 
-  await expect(position).toHaveText('1 dari 21');
+  await expect(position).toHaveText('Pembuka');
   await expect(previous).toBeDisabled();
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 
   await next.click();
-  await expect(position).toHaveText('2 dari 21');
+  await expect(position).toHaveText('1 dari 19');
   await expect(page.locator('article')).toHaveCount(1);
   const firstTitle = await page.locator('article h2').innerText();
 
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await expect(next).toBeInViewport();
   await next.click();
-  await expect(position).toHaveText('3 dari 21');
+  await expect(position).toHaveText('2 dari 19');
   expect(await page.evaluate(() => window.scrollY)).toBeLessThan(100);
-  await expect(page.getByRole('region', { name: 'Kartu 3 dari 21', exact: true })).toBeFocused();
+  await expect(page.getByRole('region', { name: 'Bacaan 2 dari 19', exact: true })).toBeFocused();
 
   await previous.click();
   await expect(page.locator('article h2')).toHaveText(firstTitle);
@@ -129,7 +128,7 @@ test('reader progresses through every card and supports returning to previous ca
 
   for (let card = 3; card <= 20; card++) {
     await next.click();
-    await expect(position).toHaveText(`${card} dari 21`);
+    await expect(position).toHaveText(`${card - 1} dari 19`);
     await expect(page.locator('article')).toHaveCount(1);
     titles.add(await page.locator('article h2').innerText());
 
@@ -153,21 +152,21 @@ test('reader progresses through every card and supports returning to previous ca
   expect(titles.size).toBe(19);
 
   await next.click();
-  await expect(position).toHaveText('21 dari 21');
+  await expect(position).toHaveText('Penutup');
   await expect(next).toBeDisabled();
   await expect(page.locator('article')).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Alhamdulillah.' })).toBeVisible();
   await page.screenshot({ path: 'test-results/reader-closing-mobile.png' });
 
   await previous.click();
-  await expect(position).toHaveText('20 dari 21');
+  await expect(position).toHaveText('19 dari 19');
   await expect(page.locator('article')).toHaveCount(1);
 
   await next.click();
   await page.getByRole('main').getByRole('link', { name: 'Kembali ke beranda' }).click();
   await expect(page).toHaveURL('/');
   await page.getByRole('link', { name: /MENUTUP HARI/ }).click();
-  await expect(position).toHaveText('1 dari 21');
+  await expect(position).toHaveText('Pembuka');
   await expect(previous).toBeDisabled();
 });
 
@@ -235,59 +234,23 @@ for (const mode of ['standalone', 'ios'] as const) {
   });
 }
 
-test('source tooltip is discoverable by hover and keyboard after its first appearance', async ({
+test('theme follows system initially and persists an explicit choice across pages and reloads', async ({
   page,
 }) => {
-  await page.goto('/read/morning/');
-  await page.getByRole('button', { name: 'Berikutnya' }).click();
-
-  const info = page.getByRole('button', { name: 'Sumber Ayat al-Kursi' });
-  const tooltip = page.getByRole('tooltip');
-
-  await expect(tooltip).toHaveText('Ketuk atau klik untuk melihat dalil dan keutamaan.');
-  await page.keyboard.press('Escape');
-  await expect(tooltip).toHaveCount(0);
-
-  await info.hover();
-  await expect(tooltip).toBeVisible();
-  await page.mouse.move(0, 0);
-  await expect(tooltip).toHaveCount(0);
-
-  await page.getByRole('region', { name: 'Kartu 2 dari 21', exact: true }).focus();
-  await page.keyboard.press('Tab');
-  await expect(info).toBeFocused();
-  await expect(tooltip).toBeVisible();
-  await page.keyboard.press('Enter');
-  await expect(page.getByRole('dialog')).toBeVisible();
-  await expect(tooltip).toHaveCount(0);
-});
-
-test.describe('source hint on touch screens', () => {
-  test.use({ hasTouch: true, viewport: { width: 320, height: 740 } });
-
-  test('shows once, fits on mobile, and opens the dialog with one tap', async ({ page }) => {
-    await page.goto('/read/morning/');
-    await page.getByRole('button', { name: 'Berikutnya' }).tap();
-
-    const tooltip = page.getByRole('tooltip');
-    await expect(tooltip).toBeVisible();
-    const bounds = await tooltip.boundingBox();
-    expect(bounds).not.toBeNull();
-    expect(bounds!.x).toBeGreaterThanOrEqual(0);
-    expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(320);
-    await page.screenshot({ path: 'test-results/source-hint-mobile.png' });
-
-    await page.getByRole('button', { name: 'Sumber Ayat al-Kursi' }).tap();
-    await expect(page.getByRole('dialog')).toContainText('QS. Al-Baqarah (2): 255');
-    await expect(tooltip).toHaveCount(0);
-    await page.getByRole('button', { name: 'Tutup dialog' }).tap();
-
-    await page.getByRole('button', { name: 'Berikutnya' }).tap();
-    await expect(page.getByRole('heading', { name: 'Al-Ikhlas', exact: true })).toBeVisible();
-    await expect(tooltip).toHaveCount(0);
-
-    await page.reload();
-    await page.getByRole('button', { name: 'Berikutnya' }).tap();
-    await expect(tooltip).toHaveCount(0);
-  });
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('/');
+  const toggle = page.getByRole('button', { name: 'Mode gelap', exact: true });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('html')).toHaveClass('dark');
+  await toggle.click();
+  await expect(page.locator('html')).not.toHaveClass('dark');
+  await page.reload();
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('html')).not.toHaveClass('dark');
+  await page.getByRole('link', { name: /MENYAMBUT HARI/ }).click();
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await toggle.click();
+  await page.reload();
+  await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('html')).toHaveClass('dark');
 });

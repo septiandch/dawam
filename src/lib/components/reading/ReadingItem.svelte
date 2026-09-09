@@ -2,7 +2,7 @@
   import { Repeat2 } from '@lucide/svelte';
 
   import ArabicText from './ArabicText.svelte';
-  import SourceDialog from './SourceDialog.svelte';
+  import ReadingSources from './ReadingSources.svelte';
   import { Badge } from '$lib/components/ui/badge';
 
   import { preferences } from '$lib/preferences.svelte';
@@ -26,10 +26,6 @@
     <h2 id={entry.id + '-title'} class="flex-1 text-xs font-medium leading-relaxed md:text-sm">
       {entry.title}
     </h2>
-
-    {#if entry.sources.length}
-      <SourceDialog {entry} />
-    {/if}
   </div>
 
   <p
@@ -80,4 +76,5 @@
       </p>
     </section>
   {/if}
+  <ReadingSources {entry} />
 </article>

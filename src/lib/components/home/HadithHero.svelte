@@ -68,9 +68,9 @@
       <p
         class="absolute bottom-11 right-13 hidden text-[9px] leading-5 tracking-[0.2em] text-hero-muted md:block"
       >
-        INGAT DIA.
+        MENGINGAT ALLAH
         <br />
-        TEMUKAN TENANG.
+        MENENANGKAN HATI
       </p>
     </div>
   </Card.Root>

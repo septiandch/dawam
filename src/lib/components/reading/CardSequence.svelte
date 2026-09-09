@@ -5,10 +5,19 @@
   import { Button } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
 
-  let { total, children }: { total: number; children: Snippet<[number]> } = $props();
+  let { readingCount, children }: { readingCount: number; children: Snippet<[number]> } = $props();
+
+  const total = $derived(readingCount + 2);
 
   let currentIndex = $state(0);
   let cardRegion: HTMLElement;
+  const positionLabel = $derived(
+    currentIndex === 0
+      ? 'Pembuka'
+      : currentIndex === total - 1
+        ? 'Penutup'
+        : `${currentIndex} dari ${readingCount}`,
+  );
 
   async function goToCard(index: number) {
     if (index < 0 || index >= total) return;
@@ -25,7 +34,9 @@
 <section
   bind:this={cardRegion}
   tabindex="-1"
-  aria-label={`Kartu ${currentIndex + 1} dari ${total}`}
+  aria-label={currentIndex > 0 && currentIndex < total - 1
+    ? `Bacaan ${positionLabel}`
+    : positionLabel}
   class="scroll-mt-24 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
 >
   <Card.Root
@@ -60,7 +71,7 @@
       aria-atomic="true"
       class="whitespace-nowrap text-xs tabular-nums text-muted-foreground"
     >
-      {currentIndex + 1} dari {total}
+      {positionLabel}
     </span>
 
     <Button

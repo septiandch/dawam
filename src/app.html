@@ -2,6 +2,18 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
+    <script>
+      (() => {
+        let dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        try {
+          const saved = JSON.parse(localStorage.getItem('dawam-preferences') || '{}');
+          if (typeof saved.darkMode === 'boolean') dark = saved.darkMode;
+        } catch {
+          // Use the system theme when storage is unavailable.
+        }
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#284e40" />
     <link rel="icon" href="/icon.svg" />
