@@ -76,5 +76,6 @@
       </p>
     </section>
   {/if}
+
   <ReadingSources {entry} />
 </article>

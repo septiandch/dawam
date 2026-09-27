@@ -13,16 +13,8 @@
   let { data } = $props();
 </script>
 
-<svelte:head>
-  <title>{data.category.title} — Dawam</title>
-  <meta name="description" content={data.category.description} />
-  <meta property="og:title" content={data.category.title + ' — Dawam'} />
-</svelte:head>
-
 <header class="sticky top-0 z-10 border-b bg-background/95 backdrop-blur-md">
-  <div
-    class="mx-auto flex max-w-212.5 items-center gap-3 px-4 py-3 text-sm md:gap-4 md:px-6 md:py-4"
-  >
+  <div class="mx-auto flex max-w-200 items-center gap-2 p-4">
     <Button
       variant="outline"
       size="icon"
@@ -32,17 +24,9 @@
     >
       <ArrowLeft class="size-5" />
     </Button>
-    <a
-      href="/"
-      class="hidden text-[27px] font-semibold tracking-tight md:inline-flex"
-      aria-label="Dawam beranda"
-    >
-      dawam
-      <span class="text-gold">.</span>
-    </a>
-    <Separator orientation="vertical" class="hidden h-6 md:block" />
-    <span>{data.category.title}</span>
-    <div class="flex-1"></div>
+
+    <span class="text-xl flex-1 text-center">{data.category.title}</span>
+
     <div class="flex items-center gap-2">
       <ThemeToggle />
       <Settings />

@@ -1,7 +1,25 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+async function closeHadithPopup(page: Page) {
+  const popup = page.getByRole('dialog');
+  await expect(popup).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(popup).toHaveCount(0);
+}
+
+/**
+ * Waits until `onMount` has run on the home page. `InstallCard` only renders once
+ * `install.ready` is set, which `initInstall()` does from `onMount` — so its presence
+ * proves the whole route has mounted. Needed before asserting that something did
+ * *not* happen, which would otherwise race with hydration.
+ */
+async function waitForHomeMount(page: Page) {
+  await expect(page.getByRole('button', { name: 'Pasang aplikasi' })).toBeVisible();
+}
 
 test('home, ordered reading, accessible dialog, and persisted preferences', async ({ page }) => {
   await page.goto('/');
+  await closeHadithPopup(page);
   await expect(page.getByRole('heading', { name: 'Dzikir harian' })).toBeVisible();
   await page.getByRole('link', { name: /MENYAMBUT HARI/ }).click();
   await expect(page).toHaveURL(/read\/morning\//);
@@ -34,6 +52,7 @@ test('mobile layout does not overflow and dialog traps focus', async ({ page }) 
   await page.setViewportSize({ width: 320, height: 740 });
   await page.goto('/');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await closeHadithPopup(page);
   await page.screenshot({ path: 'test-results/home-mobile.png', fullPage: true });
   await page.getByRole('link', { name: /MENUTUP HARI/ }).click();
   await page.screenshot({ path: 'test-results/reader-opening-mobile.png' });
@@ -76,6 +95,7 @@ test('both collections and fonts available offline after home load', async ({ pa
 test('desktop capture and unknown category', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1100 });
   await page.goto('/');
+  await closeHadithPopup(page);
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: 'test-results/home-desktop.png', fullPage: true });
   const response = await page.goto('/read/unknown/');
@@ -83,11 +103,64 @@ test('desktop capture and unknown category', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Bacaan tidak ditemukan' })).toBeVisible();
 });
 
+test('daily hadith popup auto-opens once a day, not on refresh or reader return', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+
+  const popup = page.getByRole('dialog');
+  const reopenButton = page.getByRole('button', { name: 'Hadits Hari Ini' });
+
+  // First visit of the day: it opens on its own.
+  await expect(popup).toBeVisible();
+  await expect(popup).toHaveAccessibleName('Hadits Hari Ini');
+  await expect(popup).toContainText('HADITS HARI INI');
+  await expect(popup.locator('blockquote')).toBeVisible();
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute('role')))
+    .toBe('dialog');
+  expect(await page.evaluate(() => document.activeElement?.tagName)).not.toBe('A');
+  await page.screenshot({ path: 'test-results/hadith-popup-mobile.png' });
+
+  await page.keyboard.press('Escape');
+  await expect(popup).toHaveCount(0);
+
+  // Refreshing must not bring it back.
+  await page.reload();
+  await waitForHomeMount(page);
+  await expect(popup).toHaveCount(0);
+
+  // Coming back from a reading page must not either.
+  await page.getByRole('link', { name: /MENUTUP HARI/ }).click();
+  await expect(page).toHaveURL(/read\/evening\//);
+  await page.getByRole('link', { name: 'Kembali ke beranda' }).click();
+  await expect(page).toHaveURL('/');
+  await waitForHomeMount(page);
+  await expect(popup).toHaveCount(0);
+
+  // The header button still reopens it on demand.
+  await expect(reopenButton).toBeVisible();
+  await reopenButton.click();
+  await expect(popup).toBeVisible();
+  await expect(popup.locator('blockquote')).toBeVisible();
+
+  await page.getByRole('button', { name: 'Tutup dialog' }).click();
+  await expect(popup).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Dzikir harian' })).toBeVisible();
+
+  // A new day brings it back automatically.
+  await page.evaluate(() => localStorage.setItem('dawam-hadith-seen', '2000-01-01'));
+  await page.reload();
+  await expect(popup).toBeVisible();
+});
+
 test('installation guidance uses an accessible dialog', async ({ page }) => {
   await page.addInitScript(() => {
     window.addEventListener('beforeinstallprompt', (event) => event.stopImmediatePropagation());
   });
   await page.goto('/');
+  await closeHadithPopup(page);
   await page.getByRole('button', { name: 'Pasang aplikasi' }).click();
   await expect(page.getByRole('dialog')).toContainText('Bawa Dawam bersama Anda');
   await expect(page.getByRole('dialog')).toContainText('iPhone / iPad');
@@ -165,6 +238,7 @@ test('reader progresses through every card and supports returning to previous ca
   await next.click();
   await page.getByRole('main').getByRole('link', { name: 'Kembali ke beranda' }).click();
   await expect(page).toHaveURL('/');
+  await closeHadithPopup(page);
   await page.getByRole('link', { name: /MENUTUP HARI/ }).click();
   await expect(position).toHaveText('Pembuka');
   await expect(previous).toBeDisabled();
@@ -179,6 +253,7 @@ test('install section stays hidden after installation and returns when installat
     });
   });
   await page.goto('/');
+  await closeHadithPopup(page);
 
   const installButton = page.getByRole('button', { name: 'Pasang aplikasi' });
   const installHeading = page.getByRole('heading', { name: 'Selalu dekat, di mana pun Anda.' });
@@ -199,7 +274,10 @@ test('install section stays hidden after installation and returns when installat
     });
     window.dispatchEvent(promptEvent);
   });
+  // InstallCard only mounts once `install.ready` is set, so this doubles as the
+  // hydration signal — and proves the popup did not auto-open again on reload.
   await expect(installButton).toBeVisible();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   await installButton.click();
   await expect(installHeading).toBeVisible();
 });
@@ -239,12 +317,15 @@ test('theme follows system initially and persists an explicit choice across page
 }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto('/');
+  await closeHadithPopup(page);
   const toggle = page.getByRole('button', { name: 'Mode gelap', exact: true });
   await expect(toggle).toHaveAttribute('aria-pressed', 'true');
   await expect(page.locator('html')).toHaveClass('dark');
   await toggle.click();
   await expect(page.locator('html')).not.toHaveClass('dark');
   await page.reload();
+  await waitForHomeMount(page);
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   await expect(toggle).toHaveAttribute('aria-pressed', 'false');
   await expect(page.locator('html')).not.toHaveClass('dark');
   await page.getByRole('link', { name: /MENYAMBUT HARI/ }).click();
