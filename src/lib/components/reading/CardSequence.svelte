@@ -1,15 +1,19 @@
 <script lang="ts">
-  import { tick, type Snippet } from 'svelte';
+  import { tick, untrack, type Snippet } from 'svelte';
   import { ChevronLeft, ChevronRight } from '@lucide/svelte';
 
   import { Button } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
 
-  let { readingCount, children }: { readingCount: number; children: Snippet<[number]> } = $props();
+  let {
+    readingCount,
+    initialIndex = 0,
+    children,
+  }: { readingCount: number; initialIndex?: number; children: Snippet<[number]> } = $props();
 
   const total = $derived(readingCount + 2);
 
-  let currentIndex = $state(0);
+  let currentIndex = $state(untrack(() => Math.max(0, Math.min(initialIndex, readingCount + 1))));
   let cardRegion: HTMLElement;
   const positionLabel = $derived(
     currentIndex === 0

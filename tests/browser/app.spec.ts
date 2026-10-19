@@ -27,7 +27,7 @@ test('home, ordered reading, accessible dialog, and persisted preferences', asyn
   await expect(page.locator('article')).toHaveCount(0);
   await page.getByRole('button', { name: 'Berikutnya' }).click();
   await expect(page.locator('article')).toHaveCount(1);
-  await expect(page.locator('article').first()).toContainText('Ayat al-Kursi');
+  await expect(page.locator('article').first()).toContainText('Ayat Kursi');
   await expect(page.locator('p[lang="ar"]').first()).toHaveAttribute('dir', 'rtl');
   await expect(
     page.getByRole('region', { name: 'Dalil', exact: true }).locator('blockquote'),

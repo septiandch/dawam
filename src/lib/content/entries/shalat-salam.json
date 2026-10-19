@@ -1,0 +1,13 @@
+{
+  "id": "prayer-salam",
+  "slug": "shalat-salam",
+  "type": "prayer_recitation",
+  "title": "Salam Penutup Shalat",
+  "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+  "transliteration": "As-salāmu ‘alaikum wa raḥmatullāh.",
+  "translation": "Semoga keselamatan dan rahmat Allah tercurah kepada kalian.",
+  "sources": [{ "id": "prayer-salam-source", "type": "hadith", "label": "Sunan Abi Dawud no. 996 — lafaz salam riwayat Ibn Mas‘ud; dinilai sahih oleh al-Albani pada sumber", "url": "https://sunnah.com/abudawud:996" }],
+  "virtues": [],
+  "notes": "Lafaz salam ditampilkan sekali; riwayat menyebut salam ke kanan dan ke kiri dengan lafaz ini. Tidak ditambahkan hitungan dzikir atau lafaz dari riwayat lain. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber. Entri ini bukan panduan fikih lengkap.",
+  "order": 14
+}

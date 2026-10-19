@@ -1,0 +1,27 @@
+{
+  "id": "prayer-tasbih-sujud",
+  "slug": "shalat-tasbih-sujud",
+  "type": "prayer_recitation",
+  "title": "Tasbih Sujud",
+  "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+  "transliteration": "Subḥāna rabbiyal-a‘lā.",
+  "translation": "Mahasuci Tuhanku Yang Mahatinggi.",
+  "repetitions": 3,
+  "sources": [{ "id": "prayer-tasbih-sujud-source", "type": "book", "label": "Hisn al-Muslim no. 41 (tasbih sujud, tiga kali)", "url": "https://sunnah.com/hisn:41" }],
+  "virtues": [],
+  "notes": "Tiga kali mengikuti keterangan Hisn al-Muslim, bukan penetapan syarat sah atau satu-satunya jumlah bacaan. Ada variasi bacaan sujud. Koleksi awal ini bukan panduan fikih lengkap. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber.",
+  "order": 5,
+  "defaultVersionLabel": "Subhana Rabbiyal A‘la — Tasbih sujud",
+  "variants": [
+    {
+      "id": "subhanaka-rabbana",
+      "label": "Subhanaka Allahumma Rabbana — Pujian dan ampunan",
+      "arabic": "سُبْحَانَكَ اللَّهُمَّ رَبَّنَا وَبِحَمْدِكَ، اللَّهُمَّ اغْفِرْ لِي",
+      "transliteration": "Subḥānaka Allāhumma rabbanā wa biḥamdika, Allāhummaghfir lī.",
+      "translation": "Mahasuci Engkau, ya Allah, Tuhan kami, dan segala puji bagi-Mu. Ya Allah, ampunilah aku.",
+      "sources": [{ "id": "prayer-tasbih-sujud-subhanaka-source", "type": "book", "label": "Hisn al-Muslim no. 42 (bacaan saat sujud)", "url": "https://sunnah.com/hisn:42" }],
+      "virtues": [],
+      "notes": "Alternatif bacaan saat sujud, bukan rangkaian yang harus digabung dengan bacaan utama. Sumber ini tidak menetapkan jumlah pengulangan; hitungan tiga kali pada bacaan utama tidak berlaku otomatis untuk varian ini dan bukan hitungan wajib. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan teks Arab dan makna pada sumber. Koleksi ini bukan panduan fikih shalat lengkap."
+    }
+  ]
+}

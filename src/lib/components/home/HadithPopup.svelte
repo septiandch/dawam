@@ -45,10 +45,10 @@
       variant: 'outline',
       class: 'h-11 shrink-0 gap-1.5 rounded-full bg-transparent px-3 shadow-none md:px-4',
     })}
-    aria-label="Hadits Hari Ini"
+    aria-label="Nasihat Hari Ini"
   >
     <BookOpen class="size-4" />
-    <span class="hidden whitespace-nowrap sm:inline">Hadits Hari Ini</span>
+    <span class="hidden whitespace-nowrap sm:inline">Nasihat Hari Ini</span>
   </Dialog.Trigger>
 
   <Dialog.Content
@@ -60,7 +60,7 @@
     class="p-0 md:p-0 min-w-9/12 bg-hero"
     showCloseButton={false}
   >
-    <Dialog.Title class="sr-only">Hadits Hari Ini</Dialog.Title>
+    <Dialog.Title class="sr-only">Nasihat Hari Ini</Dialog.Title>
     <HadithCard {hadith} />
 
     <Dialog.Close

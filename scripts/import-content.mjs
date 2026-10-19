@@ -1,4 +1,11 @@
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
+import {
+  readFileSync,
+  writeFileSync,
+  mkdirSync,
+  copyFileSync,
+  readdirSync,
+  existsSync,
+} from 'node:fs';
 import { createHash } from 'node:crypto';
 
 const root = '.content-source/data/dua-dhikr';
@@ -10,7 +17,20 @@ mkdirSync('docs', { recursive: true });
 copyFileSync('.content-source/LICENSE', 'docs/CONTENT-LICENSE.txt');
 
 const readings = new Map();
-const categories = [];
+const categoriesPath = 'src/lib/content/categories.json';
+// Existing content is authoritative, including manual corrections and curated collections.
+const categories = existsSync(categoriesPath)
+  ? JSON.parse(readFileSync(categoriesPath, 'utf8'))
+  : [];
+const existingIds = new Set();
+const existingSlugs = new Set();
+for (const file of readdirSync('src/lib/content/entries').filter((file) =>
+  file.endsWith('.json'),
+)) {
+  const entry = JSON.parse(readFileSync(`src/lib/content/entries/${file}`, 'utf8'));
+  existingIds.add(entry.id);
+  existingSlugs.add(entry.slug);
+}
 
 for (const [slug, title, description] of [
   [
@@ -53,11 +73,55 @@ for (const [slug, title, description] of [
       sources.push({ id: `${id}-quran`, type: 'quran', label: `QS. ${row.title} (${surah})` });
       virtues = [{ text: row.fawaid, sourceIds: [source.id] }];
     }
-    if (row.title === 'Ayat al-Kursi')
-      sources = [{ id: source.id, type: 'quran', label: 'QS. Al-Baqarah (2): 255' }];
-    if (row.title === 'Sayyid al-Istighfar') {
+    if (row.title === 'Ayat Kursi') {
+      const virtueSource = {
+        id: `${id}-virtue-source`,
+        type: 'hadith',
+        label:
+          'HR. al-Hakim 1/562; dinilai sahih oleh al-Albani dalam Shahih at-Targhib wa at-Tarhib 1/273, sebagaimana dirujuk dalam Hisn al-Muslim no. 75',
+        url: 'https://sunnah.com/hisn:75',
+      };
+      sources = [{ id: source.id, type: 'quran', label: 'QS. Al-Baqarah (2): 255' }, virtueSource];
+      virtues = [
+        {
+          text: 'Membaca Ayat Kursi pada pagi hari menjadi sebab perlindungan dari jin hingga petang, dan membacanya pada petang hari menjadi sebab perlindungan dari jin hingga pagi.',
+          sourceIds: [virtueSource.id],
+        },
+      ];
+    }
+    if (row.title === 'Sayyidul Istighfar') {
       source.url = 'https://sunnah.com/bukhari:6306';
       virtues = [{ text: row.fawaid, sourceIds: [source.id] }];
+    }
+    if (row.title === 'Tasbih dan Tahmid Harian') {
+      source.label = 'HR. Muslim no. 2692';
+      source.url = 'https://sunnah.com/muslim:2692';
+      const dailySource = {
+        id: `${id}-daily-source`,
+        type: 'hadith',
+        label: 'HR. al-Bukhari no. 6405',
+        url: 'https://sunnah.com/bukhari:6405',
+      };
+      sources = [source, dailySource];
+      virtues = [
+        {
+          text: 'Barang siapa membaca Subhanallahi wa bihamdihi 100 kali pada pagi dan petang, tidak ada seorang pun pada hari kiamat yang membawa amalan lebih utama daripada yang dibawanya, kecuali orang yang membaca sebanyak itu atau lebih.',
+          sourceIds: [source.id],
+        },
+        {
+          text: 'Barang siapa membaca Subhanallahi wa bihamdihi 100 kali dalam sehari, dosa-dosanya dihapus meskipun sebanyak buih laut.',
+          sourceIds: [dailySource.id],
+        },
+      ];
+    }
+    if (row.title === 'Dzikir Tauhid') {
+      source.url = 'https://www.hadits.id/hadits/bukhari/3293';
+      virtues = [
+        {
+          text: 'Membaca dzikir ini 100 kali dalam sehari mendatangkan pahala setara memerdekakan sepuluh budak, dicatatkan seratus kebaikan, dan dihapuskan seratus keburukan. Bacaan ini juga menjadi perlindungan dari setan pada hari itu hingga petang. Tidak ada yang membawa amalan lebih utama daripada itu, kecuali orang yang beramal lebih banyak.',
+          sourceIds: [source.id],
+        },
+      ];
     }
     const simple = /^Dibaca (\d+)x$/.exec(row.notes);
     const entry = {
@@ -68,7 +132,11 @@ for (const [slug, title, description] of [
       arabic: row.arabic,
       transliteration: row.latin,
       translation: row.translation,
-      ...(simple ? { repetitions: Number(simple[1]) } : { notes: row.notes }),
+      ...(simple
+        ? { repetitions: Number(simple[1]) }
+        : row.notes.startsWith('Dibaca ')
+          ? { readingInstruction: row.notes }
+          : { notes: row.notes }),
       sources,
       virtues,
       order: index + 1,
@@ -78,16 +146,46 @@ for (const [slug, title, description] of [
       source.url = 'https://sunnah.com/abudawud:5090';
     }
     readings.set(id, entry);
-    writeFileSync(
-      `src/lib/content/entries/${shortSlug}.json`,
-      JSON.stringify(entry, null, 2) + '\n',
-    );
+    if (!existingIds.has(id)) {
+      if (existingSlugs.has(shortSlug)) {
+        throw new Error(`Refusing to replace existing reading slug: ${shortSlug}`);
+      }
+      writeFileSync(
+        `src/lib/content/entries/${shortSlug}.json`,
+        JSON.stringify(entry, null, 2) + '\n',
+        { flag: 'wx' },
+      );
+      existingIds.add(id);
+      existingSlugs.add(shortSlug);
+    }
   }
-  categories.push({ id: slug, slug, title, description, itemIds });
+  const existingIndex = categories.findIndex((category) => category.slug === slug);
+  if (existingIndex === -1) {
+    categories.push({
+      id: slug,
+      slug,
+      title,
+      description,
+      shortDescription: `Bacaan dzikir di waktu ${slug === 'morning' ? 'pagi' : 'petang'}.`,
+      icon: slug === 'morning' ? 'sun' : 'sunset',
+      kind: 'dhikr',
+      readingMode: 'sequence',
+      itemIds,
+    });
+  } else {
+    // Supply metadata for legacy categories without replacing edited membership or text.
+    categories[existingIndex] = {
+      icon: slug === 'morning' ? 'sun' : 'sunset',
+      shortDescription: `Bacaan dzikir di waktu ${slug === 'morning' ? 'pagi' : 'petang'}.`,
+      kind: 'dhikr',
+      readingMode: 'sequence',
+      ...categories[existingIndex],
+    };
+  }
 }
 
-writeFileSync('src/lib/content/categories.json', JSON.stringify(categories, null, 2) + '\n');
+writeFileSync(categoriesPath, JSON.stringify(categories, null, 2) + '\n');
 
 console.log(
-  `Imported ${readings.size} unique readings; ${categories.map((c) => c.slug + ': ' + c.itemIds.length).join(', ')}`,
+  `Processed ${readings.size} unique source readings (existing files preserved); ${categories.map((c) => c.slug + ': ' + c.itemIds.length).join(', ')}`,
 );

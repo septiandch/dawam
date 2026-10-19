@@ -1,0 +1,21 @@
+{
+  "id": "prayer-takbir-setelah-shalat",
+  "slug": "shalat-takbir-setelah-shalat",
+  "type": "prayer_recitation",
+  "title": "Takbir Setelah Shalat",
+  "arabic": "اللَّهُ أَكْبَرُ",
+  "transliteration": "Allāhu akbar.",
+  "translation": "Allah Mahabesar.",
+  "repetitions": 33,
+  "sources": [
+    {
+      "id": "takbir-setelah-shalat-source",
+      "type": "hadith",
+      "label": "HR. Muslim no. 597a (Sahih Muslim)",
+      "url": "https://sunnah.com/muslim:597a"
+    }
+  ],
+  "virtues": [],
+  "order": 20,
+  "readingInstruction": "Dibaca 33x."
+}

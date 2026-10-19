@@ -2,18 +2,16 @@
   import { ExternalLink } from '@lucide/svelte';
   import type { ReadingEntry } from '$lib/types/content';
   let { entry }: { entry: ReadingEntry } = $props();
-  function virtueSources(sourceIds: string[]) {
-    return entry.sources
-      .filter((source) => sourceIds.includes(source.id))
-      .map((source) => source.label)
-      .join(' · ');
-  }
+  const visibleSources = $derived(entry.sources.filter((source) => source.type !== 'quran'));
+  const notes = $derived(entry.notes);
 </script>
 
-{#if entry.virtues.length || entry.sources.length || entry.notes}
-  <div class="mt-7 space-y-5 text-sm leading-7 text-muted-foreground">
+{#if entry.virtues.length || visibleSources.length || notes}
+  <div
+    class="mt-7 divide-y divide-border/60 rounded-xl bg-muted/40 px-4 text-[13px] leading-7 text-muted-foreground md:px-5"
+  >
     {#if entry.virtues.length}
-      <section aria-label="Keutamaan">
+      <section aria-label="Keutamaan" class="py-4">
         <h3
           class="mb-2 text-[10px] font-semibold uppercase tracking-widest text-secondary-foreground"
         >
@@ -21,27 +19,41 @@
         </h3>
         <div class="space-y-3">
           {#each entry.virtues as virtue}
-            <blockquote class="border-l-2 border-gold/50 pl-4">
-              <p>{virtue.text}</p>
-              {#if virtue.sourceIds.length}
-                <footer class="mt-2 text-xs leading-6">{virtueSources(virtue.sourceIds)}</footer>
-              {/if}
+            <blockquote>
+              <p class="[overflow-wrap:anywhere]">
+                {virtue.text}
+                {#if visibleSources.length > 1}
+                  {#each visibleSources as source, sourceIndex}
+                    {#if virtue.sourceIds.includes(source.id)}
+                      <a
+                        href={'#' + entry.id + '-reference-' + source.id}
+                        aria-label={'Lihat dalil ' + (sourceIndex + 1)}
+                        class="ml-1 inline-block text-[10px] font-medium text-primary underline underline-offset-2"
+                      >
+                        [{sourceIndex + 1}]
+                      </a>
+                    {/if}
+                  {/each}
+                {/if}
+              </p>
             </blockquote>
           {/each}
         </div>
       </section>
     {/if}
-    {#if entry.sources.length}
-      <section aria-label="Dalil">
-        <h3
-          class="mb-2 text-[10px] font-semibold uppercase tracking-widest text-secondary-foreground"
-        >
-          Dalil
-        </h3>
-        <blockquote class="space-y-3 border-l-2 border-gold/50 pl-4">
-          {#each entry.sources as source}
-            <div>
-              <p>{source.label}</p>
+    {#if visibleSources.length}
+      <section aria-label="Dalil" class="py-4">
+        <ul class="space-y-3">
+          {#each visibleSources as source, sourceIndex}
+            <li id={entry.id + '-reference-' + source.id} class="scroll-mt-4">
+              <p
+                class="text-xs font-medium leading-6 text-secondary-foreground [overflow-wrap:anywhere]"
+              >
+                {#if visibleSources.length > 1}
+                  <span class="mr-1 text-primary">[{sourceIndex + 1}]</span>
+                {/if}
+                {source.label}
+              </p>
               {#if source.url}
                 <a
                   href={source.url}
@@ -52,13 +64,13 @@
                   Lihat referensi <ExternalLink class="size-3.5" />
                 </a>
               {/if}
-            </div>
+            </li>
           {/each}
-        </blockquote>
+        </ul>
       </section>
     {/if}
-    {#if entry.notes}
-      <p class="text-xs leading-6">{entry.notes}</p>
+    {#if notes}
+      <p class="py-4 text-xs leading-6 [overflow-wrap:anywhere]">{notes}</p>
     {/if}
   </div>
 {/if}

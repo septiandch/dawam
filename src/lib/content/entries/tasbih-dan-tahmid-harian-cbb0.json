@@ -11,9 +11,25 @@
     {
       "id": "cbb06b96b1c1-source",
       "type": "hadith",
-      "label": "HR. Muslim No. 2691 dan No. 2692, dari Abu Hurairah radhiyallahu 'anhu Syarah Muslim XVII/17-18, Shahiih at-Targhiib wat Tarhiib 1/413 No. 653"
+      "label": "HR. Muslim no. 2692",
+            "url": "https://sunnah.com/muslim:2692"
+          },
+          {
+            "id": "cbb06b96b1c1-daily-source",
+            "type": "hadith",
+            "label": "HR. al-Bukhari no. 6405",
+            "url": "https://sunnah.com/bukhari:6405"
     }
   ],
-  "virtues": [],
+  "virtues": [
+      {
+        "text": "Barang siapa membaca Subhanallahi wa bihamdihi 100 kali pada pagi dan petang, tidak ada seorang pun pada hari kiamat yang membawa amalan lebih utama daripada yang dibawanya, kecuali orang yang membaca sebanyak itu atau lebih.",
+        "sourceIds": ["cbb06b96b1c1-source"]
+      },
+      {
+        "text": "Barang siapa membaca Subhanallahi wa bihamdihi 100 kali dalam sehari, dosa-dosanya dihapus meskipun sebanyak buih laut.",
+        "sourceIds": ["cbb06b96b1c1-daily-source"]
+      }
+    ],
   "order": 18
 }

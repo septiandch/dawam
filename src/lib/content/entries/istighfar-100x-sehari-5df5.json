@@ -6,7 +6,6 @@
   "arabic": "أَسْتَغْفِرُ الله وَأَتُوْبُ إِلَيْهِ",
   "transliteration": "Astaghfirullah wa atūbu ilaih",
   "translation": "Aku memohon ampunan kepada Allah dan bertaubat kepada-Nya.",
-  "notes": "Dibaca 100x sehari",
   "sources": [
     {
       "id": "5df5734e5a81-source",
@@ -15,5 +14,6 @@
     }
   ],
   "virtues": [],
-  "order": 19
+  "order": 19,
+  "readingInstruction": "Dibaca 100x sehari"
 }

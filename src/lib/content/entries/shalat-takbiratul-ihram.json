@@ -1,0 +1,13 @@
+{
+  "id": "prayer-takbiratul-ihram",
+  "slug": "shalat-takbiratul-ihram",
+  "type": "prayer_recitation",
+  "title": "Takbiratul Ihram",
+  "arabic": "اللَّهُ أَكْبَرُ",
+  "transliteration": "Allāhu akbar.",
+  "translation": "Allah Mahabesar.",
+  "sources": [{ "id": "prayer-takbiratul-ihram-source", "type": "hadith", "label": "Sahih Muslim no. 498 — membuka shalat dengan takbir", "url": "https://sunnah.com/muslim:498" }],
+  "virtues": [],
+  "notes": "Takbir pembuka shalat; Muslim no. 498 menyebut pembukaan dengan takbir, yang dijelaskan sebagai Allahu akbar pada terjemahan sumber. Entri ini bukan panduan fikih lengkap. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber.",
+  "order": 1
+}

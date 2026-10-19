@@ -15,7 +15,7 @@
         class="flex items-center gap-2.5 text-[8px] font-normal tracking-[0.2em] text-hero-muted md:text-[10px]"
       >
         <span class="h-px w-5.5 bg-gold-light"></span>
-        HADITS HARI INI
+        NASIHAT HARI INI
       </h2>
 
       <blockquote

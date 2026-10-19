@@ -1,0 +1,21 @@
+{
+  "id": "prayer-allahumma-antas-salam",
+  "slug": "shalat-allahumma-antas-salam",
+  "type": "prayer_recitation",
+  "title": "Doa Setelah Salam",
+  "arabic": "اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ تَبَارَكْتَ ذَا الْجَلَالِ وَالْإِكْرَامِ",
+  "transliteration": "Allāhumma antas-salāmu wa minkas-salām, tabārakta żal-jalāli wal-ikrām.",
+  "translation": "Ya Allah, Engkaulah Yang Mahasejahtera, dan dari-Mu kesejahteraan. Mahaberkah Engkau, Pemilik keagungan dan kemuliaan.",
+  "repetitions": 1,
+  "sources": [
+    {
+      "id": "allahumma-antas-salam-source",
+      "type": "hadith",
+      "label": "HR. Muslim no. 591 (Sahih Muslim)",
+      "url": "https://sunnah.com/muslim:591"
+    }
+  ],
+  "virtues": [],
+  "order": 16,
+  "readingInstruction": "Dibaca 1x setelah istighfar."
+}

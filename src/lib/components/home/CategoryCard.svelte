@@ -1,60 +1,40 @@
 <script lang="ts">
-  import { Sun, Sunset, ArrowUpRight, ArrowRight, BookOpen } from '@lucide/svelte';
+  import { Sun, Sunset, BookOpen, ArrowRight } from '@lucide/svelte';
 
-  import * as Card from '$lib/components/ui/card';
-  import { Separator } from '$lib/components/ui/separator';
-
-  import { cn } from '$lib/utils';
   import type { Category } from '$lib/types/content';
 
   let { category }: { category: Category } = $props();
 
-  const morning = $derived(category.slug === 'morning');
+  const icons = { sun: Sun, sunset: Sunset, 'book-open': BookOpen };
+  const Icon = $derived(category.icon === 'prayer-hands' ? undefined : icons[category.icon]);
 </script>
 
 <a
   href={'/read/' + category.slug + '/'}
-  class="group block rounded-xl outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+  class="flex min-h-16 items-center gap-3 rounded-xl border bg-card p-4 transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-ring"
 >
-  <Card.Root
-    class={cn(
-      'h-full gap-0 border px-6 py-5.5 shadow-none ring-0 transition-transform group-hover:-translate-y-0.5 group-hover:border-ring/50 motion-reduce:transform-none md:px-7 md:py-6',
-      morning ? 'border-morning-border bg-morning' : 'border-evening-border bg-evening',
-    )}
-  >
-    <div class="flex items-center gap-3">
-      <span
-        class={cn(
-          'grid size-13 shrink-0 place-items-center rounded-2xl',
-          morning
-            ? 'bg-morning-accent text-morning-foreground'
-            : 'bg-evening-accent text-evening-foreground',
-        )}
-      >
-        {#if morning}
-          <Sun class="size-7" strokeWidth={1.4} />
-        {:else}
-          <Sunset class="size-7" strokeWidth={1.4} />
-        {/if}
-      </span>
-      <span class="text-[9px] font-medium tracking-[0.17em] text-muted-foreground">
-        {morning ? 'MENYAMBUT HARI' : 'MENUTUP HARI'}
-      </span>
-      <ArrowUpRight class="ml-auto size-5 text-muted-foreground" />
-    </div>
-
-    <h3 class="mb-2 mt-5 font-serif text-[25px] font-normal">{category.title}</h3>
-    <p class="mb-5 text-xs leading-7 text-muted-foreground md:max-w-80">{category.description}</p>
-
-    <Separator class="mt-auto" />
-
-    <div class="flex items-center justify-between gap-2 pt-4.5 text-[11px]">
-      <span class="flex items-center gap-1.5 text-muted-foreground">
-        <BookOpen class="size-3.5" />{category.itemIds.length} bacaan
-      </span>
-      <span class="flex items-center gap-1.5 font-semibold">
-        Mulai membaca <ArrowRight class="size-4" />
-      </span>
-    </div>
-  </Card.Root>
+  {#if category.icon === 'prayer-hands'}
+    <svg
+      class="size-6 shrink-0 text-primary"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M10 21v-3.5c0-1.5-.5-2.5-1.5-3.5L6 11.5a1.4 1.4 0 0 0-2 2L6 16" />
+      <path d="M4 12V5a1.5 1.5 0 0 0-3 0v8c0 2 .8 3.5 2 5l2 3" />
+      <path d="M14 21v-3.5c0-1.5.5-2.5 1.5-3.5l2.5-2.5a1.4 1.4 0 0 1 2 2L18 16" />
+      <path d="M20 12V5a1.5 1.5 0 0 1 3 0v8c0 2-.8 3.5-2 5l-2 3" />
+    </svg>
+  {:else if Icon}
+    <Icon class="size-6 shrink-0 text-primary" strokeWidth={1.5} aria-hidden="true" />
+  {/if}
+  <div class="min-w-0 flex-1">
+    <h3 class="text-sm font-medium">{category.title}</h3>
+    <p class="mt-1 text-sm text-muted-foreground">{category.shortDescription}</p>
+  </div>
+  <ArrowRight class="size-4 shrink-0 text-muted-foreground" aria-hidden="true" />
 </a>

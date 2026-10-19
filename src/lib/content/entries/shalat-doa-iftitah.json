@@ -1,0 +1,46 @@
+{
+  "id": "prayer-doa-iftitah",
+  "slug": "shalat-doa-iftitah",
+  "type": "prayer_recitation",
+  "title": "Doa Iftitah",
+  "arabic": "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنْ خَطَايَايَ كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالثَّلْجِ وَالْمَاءِ وَالْبَرَدِ",
+  "transliteration": "Allāhumma bā‘id bainī wa baina khaṭāyāya kamā bā‘adta bainal-masyriqi wal-maghrib. Allāhumma naqqinī min khaṭāyāya kamā yunaqqaṡ-ṡaubul-abyaḍu minad-danas. Allāhummaghsilnī min khaṭāyāya biṡ-ṡalji wal-mā’i wal-barad.",
+  "translation": "Ya Allah, jauhkanlah aku dari dosa-dosaku sebagaimana Engkau menjauhkan timur dari barat. Ya Allah, bersihkanlah aku dari dosa-dosaku sebagaimana kain putih dibersihkan dari kotoran. Ya Allah, basuhlah aku dari dosa-dosaku dengan salju, air, dan hujan es.",
+  "sources": [{ "id": "prayer-doa-iftitah-source", "type": "book", "label": "Hisn al-Muslim no. 27; merujuk al-Bukhari 1/181 dan Muslim 1/419", "url": "https://sunnah.com/hisn:27" }],
+  "virtues": [],
+  "notes": "Salah satu variasi doa pembuka setelah takbir, bukan satu-satunya bacaan iftitah. Koleksi awal ini bukan panduan fikih shalat lengkap. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber.",
+  "order": 1,
+  "defaultVersionLabel": "Allahumma Ba‘id — Memohon dijauhkan dari dosa",
+  "variants": [
+    {
+      "id": "subhanaka-allahumma",
+      "label": "Subhanaka Allahumma — Pujian pembuka",
+      "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلَا إِلَهَ غَيْرُكَ",
+      "transliteration": "Subḥānaka Allāhumma wa biḥamdika, wa tabārakasmuka, wa ta‘ālā jadduka, wa lā ilāha ghairuk.",
+      "translation": "Mahasuci Engkau, ya Allah, dan segala puji bagi-Mu. Mahaberkah nama-Mu dan Mahaluhur keagungan-Mu. Tidak ada tuhan yang berhak disembah selain Engkau.",
+      "sources": [{ "id": "prayer-doa-iftitah-subhanaka-source", "type": "book", "label": "Hisn al-Muslim no. 28 (doa pembuka setelah takbir)", "url": "https://sunnah.com/hisn:28" }],
+      "virtues": [],
+      "notes": "Alternatif doa iftitah setelah takbir, bukan rangkaian yang harus digabung dengan bacaan utama. Sumber ini tidak menetapkan jumlah pengulangan; tidak ditambahkan hitungan wajib. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan teks Arab dan makna pada sumber. Koleksi ini bukan panduan fikih shalat lengkap."
+    },
+    {
+      "id": "wajjahtu-wajhiya",
+      "label": "Wajjahtu Wajhiya — Penyerahan diri kepada Allah",
+      "arabic": "وَجَّهتُ وَجْهِيَ لِلَّذي فَطَرَ السَّمواتِ وَالأَرْضَ حَنيفَاً وَما أَنا مِنَ المشْرِكين ، إِنَّ صَلاتي ، وَنُسُكي ، وَمَحْيايَ ، وَمَماتي للهِ رَبِّ العالَمين ، لا شَريكَ لَهُ وَبِذلكَ أُمِرْتُ وَأَنا مِنَ المسْلِمين. اللّهُمَّ أَنْتَ المَلِكُ لا إِلهَ إِلاّ أَنْت، أَنْتَ رَبِّي وَأَنا عَبْدُك ، ظَلَمْتُ نَفْسي وَاعْتَرَفْتُ بِذَنْبي فَاغْفِرْ لي ذُنوبي جَميعاً إِنَّه لا يَغْفِرُ الذُّنوبَ إلاّ أَنْت. وَاهْدِني لأَحْسَنِ الأَخْلاقِ لا يَهْدي لأَحْسَنِها إِلاّ أَنْت ، وَاصْرِف عَنّْي سَيِّئَها، لا يَصْرِفُ عَنّْي سَيِّئَها إِلاّ أَنْت، لَبَّيْكَ وَسَعْدَيْك، وَالخَيْرُ كُلُّهُ بِيَدَيْك، وَالشَّرُّ لَيْسَ إِلَيْك ، أَنا بِكَ وَإِلَيْك ، تَبارَكْتَ وَتَعالَيتَ أَسْتَغْفِرُكَ وَأَتوبُ إِلَيك",
+      "transliteration": "Wajjahtu wajhiya lillażī faṭaras-samāwāti wal-arḍa ḥanīfan wa mā ana minal-musyrikīn. Inna ṣalātī wa nusukī wa maḥyāya wa mamātī lillāhi rabbil-‘ālamīn, lā syarīka lahū wa biżālika umirtu wa ana minal-muslimīn. Allāhumma antal-maliku lā ilāha illā anta, anta rabbī wa ana ‘abduka, ẓalamtu nafsī wa‘taraftu biżanbī, faghfir lī żunūbī jamī‘an, innahū lā yaghfiruż-żunūba illā anta. Wahdinī li’aḥsanil-akhlāqi lā yahdī li’aḥsanihā illā anta, waṣrif ‘annī sayyi’ahā lā yaṣrifu ‘annī sayyi’ahā illā anta. Labbaika wa sa‘daika, wal-khairu kulluhū biyadaika, wasy-syarru laisa ilaika, ana bika wa ilaika, tabārakta wa ta‘ālaita, astaghfiruka wa atūbu ilaik.",
+      "translation": "Aku menghadapkan wajahku dengan lurus kepada Dia yang menciptakan langit dan bumi, dan aku bukan termasuk orang-orang musyrik. Sesungguhnya shalatku, ibadah kurbanku, hidupku, dan matiku adalah untuk Allah, Tuhan seluruh alam. Tidak ada sekutu bagi-Nya. Dengan itulah aku diperintahkan dan aku termasuk orang-orang muslim. Ya Allah, Engkaulah Raja, tidak ada tuhan yang berhak disembah selain Engkau. Engkaulah Tuhanku dan aku hamba-Mu. Aku telah menzalimi diriku dan mengakui dosaku. Maka ampunilah seluruh dosaku; sesungguhnya tidak ada yang mengampuni dosa selain Engkau. Tunjukilah aku kepada akhlak terbaik; tidak ada yang dapat menunjuki kepada yang terbaik selain Engkau. Jauhkanlah dariku akhlak yang buruk; tidak ada yang dapat menjauhkannya dariku selain Engkau. Aku memenuhi panggilan-Mu dan siap menaati-Mu. Seluruh kebaikan berada di kedua tangan-Mu dan keburukan tidak dinisbatkan kepada-Mu. Aku ada dengan pertolongan-Mu dan kepada-Mu aku kembali. Mahaberkah dan Mahatinggi Engkau. Aku memohon ampun kepada-Mu dan bertobat kepada-Mu.",
+      "sources": [{ "id": "prayer-doa-iftitah-wajjahtu-source", "type": "book", "label": "Hisn al-Muslim no. 29; merujuk Muslim 1/534", "url": "https://sunnah.com/hisn:29" }],
+      "virtues": [],
+      "notes": "Formula lengkap sebagaimana ditampilkan dalam Hisn al-Muslim no. 29, hingga astaghfiruka wa atubu ilaik; pemanjang huruf dan spasi dinormalisasi. Alternatif mandiri, tidak disambung dengan Allahu Akbar Kabira untuk membentuk bacaan gabungan yang lazim di Indonesia. Tidak ditambahkan jumlah pengulangan. Transliterasi dan terjemahan Indonesia merupakan olahan editorial, bukan kutipan terjemahan resmi sumber. Koleksi ini bukan panduan fikih shalat lengkap."
+    },
+    {
+      "id": "allahu-akbar-kabira",
+      "label": "Allahu Akbar Kabira — Takbir, tahmid, dan tasbih",
+      "arabic": "اللَّهُ أَكْبَرُ كَبِيرًا وَالْحَمْدُ لِلَّهِ كَثِيرًا وَسُبْحَانَ اللَّهِ بُكْرَةً وَأَصِيلاً",
+      "transliteration": "Allāhu akbaru kabīrā, wal-ḥamdu lillāhi kaṡīrā, wa subḥānallāhi bukratan wa aṣīlā.",
+      "translation": "Allah Mahabesar dengan kebesaran yang agung. Segala puji bagi Allah dengan pujian yang banyak. Mahasuci Allah pada waktu pagi dan petang.",
+      "sources": [{ "id": "prayer-doa-iftitah-allahu-akbar-source", "type": "hadith", "label": "Sahih Muslim no. 601; riwayat Ibnu Umar tentang ucapan dalam shalat yang disetujui Nabi", "url": "https://sunnah.com/muslim:601" }],
+      "virtues": [],
+      "notes": "Seluruh formula yang diucapkan seorang jamaah dan disetujui Nabi dalam riwayat Muslim no. 601. Ini bukan redaksi Hisn al-Muslim no. 31 yang memuat pengulangan dan isti‘adzah. Tidak digabung dengan Wajjahtu Wajhiya atau ditambah jumlah pengulangan yang tidak disebutkan dalam riwayat ini. Transliterasi dan terjemahan Indonesia merupakan olahan editorial, bukan kutipan terjemahan resmi sumber. Koleksi ini bukan panduan fikih shalat lengkap."
+    }
+  ]
+}

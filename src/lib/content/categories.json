@@ -2,7 +2,10 @@
   {
     "id": "morning",
     "slug": "morning",
+    "kind": "dhikr",
+    "readingMode": "sequence",
     "title": "Dzikir Pagi",
+    "shortDescription": "Bacaan dzikir di waktu pagi.",
     "description": "Awali hari dengan dzikir dan doa, memohon kebaikan serta perlindungan Allah.",
     "itemIds": [
       "fd44720bd528",
@@ -24,12 +27,16 @@
       "d9614b347c5c",
       "cbb06b96b1c1",
       "5df5734e5a81"
-    ]
+    ],
+    "icon": "sun"
   },
   {
     "id": "evening",
     "slug": "evening",
+    "kind": "dhikr",
+    "readingMode": "sequence",
     "title": "Dzikir Petang",
+    "shortDescription": "Bacaan dzikir di waktu petang.",
     "description": "Tutup hari dengan mengingat Allah, bersyukur dan memohon perlindungan-Nya.",
     "itemIds": [
       "fd44720bd528",
@@ -51,6 +58,68 @@
       "b25f0503ec7b",
       "347ab1665850",
       "3bec0c93d4f7"
-    ]
+    ],
+    "icon": "sunset"
+  },
+  {
+    "id": "daily-duas",
+    "slug": "daily-duas",
+    "kind": "dua",
+    "readingMode": "single",
+    "title": "Kumpulan Do'a",
+    "shortDescription": "Doa untuk kegiatan sehari-hari.",
+    "description": "Pilihan do'a sehari-hari.",
+    "itemIds": [
+      "dua-bangun-tidur",
+      "dua-sebelum-masuk-toilet",
+      "dua-setelah-keluar-toilet",
+      "dua-keluar-rumah",
+      "dua-sebelum-tidur"
+    ],
+    "icon": "prayer-hands"
+  },
+  {
+    "id": "prayer",
+    "slug": "prayer",
+    "kind": "prayer_recitation",
+    "readingMode": "sequence",
+    "title": "Bacaan Shalat",
+    "shortDescription": "Bacaan dari takbir hingga salam.",
+    "description": "Bacaan dari takbir hingga salam, termasuk Al-Fatihah, tasyahud, shalawat, dan pilihan versi doa. Urutan ini untuk belajar bacaan, bukan simulasi rakaat atau panduan fikih lengkap. Terdapat perbedaan rincian praktik; pelajari bersama guru yang tepercaya.",
+    "itemIds": [
+      "prayer-takbiratul-ihram",
+      "prayer-doa-iftitah",
+      "prayer-al-fatihah",
+      "prayer-tasbih-rukuk",
+      "prayer-bangkit-dari-rukuk",
+      "prayer-pujian-iktidal",
+      "prayer-tasbih-sujud",
+      "prayer-doa-antara-dua-sujud",
+      "prayer-tasyahud",
+      "prayer-shalawat",
+      "prayer-doa-sebelum-salam",
+      "prayer-doa-memohon-pertolongan-ibadah",
+      "prayer-salam"
+    ],
+    "icon": "book-open"
+  },
+  {
+    "id": "post-prayer",
+    "slug": "post-prayer",
+    "kind": "prayer_recitation",
+    "readingMode": "sequence",
+    "title": "Dzikir setelah shalat",
+    "shortDescription": "Dzikir setelah salam berdasarkan hadis shahih.",
+    "description": "Dzikir setelah salam: istighfar, doa, tasbih, tahmid, takbir, dan tahlil berdasarkan hadis shahih. Rangkaian ini merupakan pilihan bacaan, bukan urutan wajib.",
+    "itemIds": [
+      "prayer-istighfar-setelah-shalat",
+      "prayer-allahumma-antas-salam",
+      "prayer-tauhid-setelah-shalat",
+      "prayer-tasbih-setelah-shalat",
+      "prayer-tahmid-setelah-shalat",
+      "prayer-takbir-setelah-shalat",
+      "prayer-tahlil-penutup-setelah-shalat"
+    ],
+    "icon": "book-open"
   }
 ]

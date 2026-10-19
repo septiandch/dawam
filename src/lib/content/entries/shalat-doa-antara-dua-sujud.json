@@ -1,0 +1,26 @@
+{
+  "id": "prayer-doa-antara-dua-sujud",
+  "slug": "shalat-doa-antara-dua-sujud",
+  "type": "prayer_recitation",
+  "title": "Doa di Antara Dua Sujud",
+  "arabic": "رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي",
+  "transliteration": "Rabbighfir lī, rabbighfir lī.",
+  "translation": "Tuhanku, ampunilah aku. Tuhanku, ampunilah aku.",
+  "sources": [{ "id": "prayer-doa-antara-dua-sujud-source", "type": "book", "label": "Hisn al-Muslim no. 48; merujuk Abu Dawud 1/231", "url": "https://sunnah.com/hisn:48" }],
+  "virtues": [],
+  "notes": "Salah satu variasi doa duduk di antara dua sujud. Dua permohonan sudah tertulis dalam teks; tidak ditambahkan hitungan pengulangan terpisah. Koleksi awal ini bukan panduan fikih lengkap. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber.",
+  "order": 6,
+  "defaultVersionLabel": "Rabbighfir Li — Memohon ampunan",
+  "variants": [
+    {
+      "id": "allahummaghfir-li-warhamni",
+      "label": "Allahummaghfir Li Warhamni — Tujuh permohonan",
+      "arabic": "اللّهُمَّ اغْفِرْ لي ، وَارْحَمْني ، وَاهْدِني ، وَاجْبُرْني ، وَعافِني وَارْزُقْني وَارْفَعْني",
+      "transliteration": "Allāhummaghfir lī, warḥamnī, wahdinī, wajburnī, wa ‘āfinī, warzuqnī, warfa‘nī.",
+      "translation": "Ya Allah, ampunilah aku, rahmatilah aku, berilah aku petunjuk, cukupilah kekuranganku, berilah aku keselamatan, berilah aku rezeki, dan angkatlah derajatku.",
+      "sources": [{ "id": "prayer-doa-antara-dua-sujud-allahummaghfir-source", "type": "book", "label": "Hisn al-Muslim no. 49; mencantumkan Abu Dawud, Ibnu Majah, dan at-Tirmidzi serta rujukan penilaian al-Albani", "url": "https://sunnah.com/hisn:49" }],
+      "virtues": [],
+      "notes": "Alternatif mandiri sesuai seluruh redaksi dan urutan tujuh permohonan pada Hisn al-Muslim no. 49; pemanjang huruf dan spasi dinormalisasi. Sumber langsung redaksi ini adalah kompilasi Hisn al-Muslim, bukan klaim bahwa setiap riwayat Abu Dawud, Ibnu Majah, atau at-Tirmidzi yang dirujuknya memuat seluruh lafaz identik. Tidak dirangkai ulang dari riwayat lain dan tidak digabung dengan bacaan utama. Tidak ditambahkan jumlah pengulangan. Transliterasi dan terjemahan Indonesia merupakan olahan editorial, bukan kutipan terjemahan resmi sumber. Koleksi ini bukan panduan fikih shalat lengkap."
+    }
+  ]
+}

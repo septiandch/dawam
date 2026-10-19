@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { BookOpen, Download } from '@lucide/svelte';
+  import { Download } from '@lucide/svelte';
 
   import { Button, buttonVariants } from '$lib/components/ui/button';
-  import * as Card from '$lib/components/ui/card';
   import * as Dialog from '$lib/components/ui/dialog';
 
   let {
@@ -16,40 +15,25 @@
   } = $props();
 </script>
 
-<Card.Root
-  class="mt-6 flex-row flex-wrap items-center gap-4 border p-5 shadow-none ring-0 md:mt-8 md:px-6 md:py-5.5"
->
-  <div class="grid size-12 shrink-0 place-items-center rounded-xl bg-secondary">
-    <BookOpen class="size-6" strokeWidth={1.5} />
-  </div>
-
-  <div class="min-w-40 flex-1">
-    <h3 class="mb-1 text-xs font-medium leading-6 md:text-[13px]">
-      Selalu dekat, di mana pun Anda.
-    </h3>
-    <p class="text-[11px] leading-6 text-muted-foreground">
-      Simpan Dawam di perangkat Anda. Baca kapan saja, bahkan tanpa internet.
-    </p>
-  </div>
-
+<div class="mt-8 text-center">
   {#if canInstall}
     <Button
-      variant="outline"
+      variant="secondary"
       onclick={oninstall}
       disabled={installing}
-      class="w-full text-xs shadow-none md:w-auto"
+      class="h-auto min-h-11 whitespace-normal text-xs"
     >
-      <Download class="size-4" />{installing ? 'Memasang…' : 'Pasang aplikasi'}
+      <Download class="size-4" />{installing ? 'Memasang…' : 'Pasang aplikasi untuk baca offline'}
     </Button>
   {:else}
     <Dialog.Root>
       <Dialog.Trigger
         class={buttonVariants({
-          variant: 'outline',
-          class: 'w-full text-xs shadow-none md:w-auto',
+          variant: 'secondary',
+          class: 'h-auto min-h-11 whitespace-normal text-xs',
         })}
       >
-        <Download class="size-4" />Pasang aplikasi
+        <Download class="size-4" />Pasang aplikasi untuk baca offline
       </Dialog.Trigger>
 
       <Dialog.Content>
@@ -81,4 +65,4 @@
       </Dialog.Content>
     </Dialog.Root>
   {/if}
-</Card.Root>
+</div>
