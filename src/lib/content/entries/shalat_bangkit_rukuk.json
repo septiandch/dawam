@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-bangkit-dari-rukuk",
+  "slug": "shalat-bangkit-rukuk",
+  "type": "prayer_recitation",
+  "title": "Bacaan Bangkit dari Rukuk",
+  "text": {
+    "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
+    "transliteration": "Sami‘allāhu liman ḥamidah.",
+    "translation": "Allah mendengar orang yang memuji-Nya."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Bacaan Bangkit dari Rukuk",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "",
+      "notes": "Bacaan ketika bangkit dari rukuk. Rincian penggunaannya oleh imam, makmum, dan orang yang shalat sendiri mengikuti pembahasan fikih; entri ini tidak menyamakan ketiganya. Koleksi awal, bukan panduan lengkap. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber.",
+      "sources": [
+        {
+          "id": "prayer-bangkit-dari-rukuk-source",
+          "type": "book",
+          "label": "Hisn al-Muslim no. 38; merujuk al-Bukhari melalui Fath al-Bari 2/282",
+          "url": "https://sunnah.com/hisn:38"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

@@ -21,7 +21,7 @@
   <div class="flex items-center gap-7">
     <div class="flex items-center gap-1.5 md:gap-2">
       <HadithPopup />
-      <ThemeToggle />
+      <div class="hidden md:block"><ThemeToggle /></div>
       <Settings />
     </div>
   </div>

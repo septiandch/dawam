@@ -2,6 +2,7 @@
   import { ArrowLeft, ArrowRight, Search } from '@lucide/svelte';
   import { page } from '$app/state';
   import { onMount } from 'svelte';
+  import { canonicalSlug } from '$lib/content/slugs';
 
   import Settings from '$lib/components/Settings.svelte';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
@@ -27,7 +28,9 @@
   );
   const selectedSlug = $derived(mounted ? page.url.searchParams.get('start') : null);
   const initialIndex = $derived(
-    selectedSlug ? data.entries.findIndex((entry) => entry.slug === selectedSlug) + 1 : 0,
+    selectedSlug
+      ? data.entries.findIndex((entry) => entry.slug === canonicalSlug(selectedSlug)) + 1
+      : 0,
   );
   const filteredEntries = $derived(
     data.entries.filter((entry) =>
@@ -64,12 +67,13 @@
       <ArrowLeft class="size-5" />
     </Button>
 
-    <ReadingListButton categorySlug={data.category.slug} active={mode === 'single'} />
-
-    <span class="min-w-0 flex-1 text-center text-sm md:text-xl">{data.category.title}</span>
+    <span class="min-w-0 flex-1 md:ml-4 text-left text-sm md:text-xl">
+      {data.category.title}
+    </span>
 
     <div class="flex shrink-0 items-center gap-2">
-      <ThemeToggle />
+      <ReadingListButton categorySlug={data.category.slug} active={mode === 'single'} />
+      <div class="hidden md:block"><ThemeToggle /></div>
       <Settings />
     </div>
   </div>

@@ -27,10 +27,12 @@
     >
       <ArrowLeft class="size-5" />
     </Button>
-    <ReadingListButton categorySlug={data.category.slug} />
-    <h1 class="min-w-0 flex-1 text-center text-sm font-medium">{data.category.title}</h1>
+    <h1 class="min-w-0 flex-1 text-left text-sm font-medium">
+      {data.category.title}
+    </h1>
     <div class="flex shrink-0 items-center gap-2">
-      <ThemeToggle />
+      <ReadingListButton categorySlug={data.category.slug} />
+      <div class="hidden md:block"><ThemeToggle /></div>
       <Settings />
     </div>
   </div>

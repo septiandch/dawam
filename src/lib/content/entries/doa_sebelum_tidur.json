@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "dua-sebelum-tidur",
+  "slug": "doa-sebelum-tidur",
+  "type": "dua",
+  "title": "Doa Sebelum Tidur",
+  "text": {
+    "arabic": "بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا",
+    "transliteration": "Bismika Allāhumma amūtu wa aḥyā.",
+    "translation": "Dengan nama-Mu, ya Allah, aku mati dan aku hidup."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Sebelum Tidur",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca ketika hendak tidur; ini salah satu doa, bukan seluruh rangkaian adab tidur. Urutan lafaz mengikuti riwayat yang ditautkan. Transliterasi dan terjemahan Indonesia merupakan olahan editorial berdasarkan sumber.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "dua-sebelum-tidur-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 6324 (bacaan sebelum tidur)",
+          "url": "https://sunnah.com/bukhari:6324"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "bedtime",
+      "label": "Dzikir sebelum tidur",
+      "title": "Doa Sebelum Tidur",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca ketika hendak tidur.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tidur-doa-sebelum-tidur-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 6324 (Sahih al-Bukhari)",
+          "url": "https://sunnah.com/bukhari:6324"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

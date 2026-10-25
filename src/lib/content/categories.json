@@ -7,28 +7,85 @@
     "title": "Dzikir Pagi",
     "shortDescription": "Bacaan dzikir di waktu pagi.",
     "description": "Awali hari dengan dzikir dan doa, memohon kebaikan serta perlindungan Allah.",
-    "itemIds": [
-      "fd44720bd528",
-      "9e3658b41188",
-      "bcc8221c0eac",
-      "6695e1d875f5",
-      "f0a7a7737680",
-      "48161908ec59",
-      "06d7accc707a",
-      "522207d971db",
-      "c76c9741569c",
-      "49a35ba8da62",
-      "4fafca1453bc",
-      "885c435a1217",
-      "f4c91517d983",
-      "f2c9df65bdae",
-      "d18cd35487c7",
-      "b6bcb28fc42c",
-      "d9614b347c5c",
-      "cbb06b96b1c1",
-      "5df5734e5a81"
-    ],
-    "icon": "sun"
+    "icon": "sun",
+    "items": [
+      {
+        "entryId": "fd44720bd528",
+        "variantId": "default"
+      },
+      {
+        "entryId": "9e3658b41188",
+        "variantId": "default"
+      },
+      {
+        "entryId": "bcc8221c0eac",
+        "variantId": "default"
+      },
+      {
+        "entryId": "6695e1d875f5",
+        "variantId": "default"
+      },
+      {
+        "entryId": "f0a7a7737680",
+        "variantId": "default"
+      },
+      {
+        "entryId": "48161908ec59",
+        "variantId": "default"
+      },
+      {
+        "entryId": "06d7accc707a",
+        "variantId": "default"
+      },
+      {
+        "entryId": "522207d971db",
+        "variantId": "default"
+      },
+      {
+        "entryId": "c76c9741569c",
+        "variantId": "default"
+      },
+      {
+        "entryId": "49a35ba8da62",
+        "variantId": "default"
+      },
+      {
+        "entryId": "4fafca1453bc",
+        "variantId": "default"
+      },
+      {
+        "entryId": "885c435a1217",
+        "variantId": "default"
+      },
+      {
+        "entryId": "f4c91517d983",
+        "variantId": "default"
+      },
+      {
+        "entryId": "f2c9df65bdae",
+        "variantId": "default"
+      },
+      {
+        "entryId": "d18cd35487c7",
+        "variantId": "default"
+      },
+      {
+        "entryId": "b6bcb28fc42c",
+        "variantId": "default"
+      },
+      {
+        "entryId": "d9614b347c5c",
+        "variantId": "default"
+      },
+      {
+        "entryId": "cbb06b96b1c1",
+        "variantId": "default"
+      },
+      {
+        "entryId": "5df5734e5a81",
+        "variantId": "default"
+      }
+    ]
   },
   {
     "id": "evening",
@@ -38,45 +95,269 @@
     "title": "Dzikir Petang",
     "shortDescription": "Bacaan dzikir di waktu petang.",
     "description": "Tutup hari dengan mengingat Allah, bersyukur dan memohon perlindungan-Nya.",
-    "itemIds": [
-      "fd44720bd528",
-      "9e3658b41188",
-      "bcc8221c0eac",
-      "6695e1d875f5",
-      "d7ea6c6f8e90",
-      "d0a51ee42c63",
-      "06d7accc707a",
-      "522207d971db",
-      "c76c9741569c",
-      "49a35ba8da62",
-      "4fafca1453bc",
-      "885c435a1217",
-      "f4c91517d983",
-      "486452aaee1b",
-      "b150a96ea2e9",
-      "b6bcb28fc42c",
-      "b25f0503ec7b",
-      "347ab1665850",
-      "3bec0c93d4f7"
-    ],
-    "icon": "sunset"
+    "icon": "sunset",
+    "items": [
+      {
+        "entryId": "fd44720bd528",
+        "variantId": "default"
+      },
+      {
+        "entryId": "9e3658b41188",
+        "variantId": "default"
+      },
+      {
+        "entryId": "bcc8221c0eac",
+        "variantId": "default"
+      },
+      {
+        "entryId": "6695e1d875f5",
+        "variantId": "default"
+      },
+      {
+        "entryId": "d7ea6c6f8e90",
+        "variantId": "default"
+      },
+      {
+        "entryId": "d0a51ee42c63",
+        "variantId": "default"
+      },
+      {
+        "entryId": "06d7accc707a",
+        "variantId": "default"
+      },
+      {
+        "entryId": "522207d971db",
+        "variantId": "default"
+      },
+      {
+        "entryId": "c76c9741569c",
+        "variantId": "default"
+      },
+      {
+        "entryId": "49a35ba8da62",
+        "variantId": "default"
+      },
+      {
+        "entryId": "4fafca1453bc",
+        "variantId": "default"
+      },
+      {
+        "entryId": "885c435a1217",
+        "variantId": "default"
+      },
+      {
+        "entryId": "f4c91517d983",
+        "variantId": "default"
+      },
+      {
+        "entryId": "486452aaee1b",
+        "variantId": "default"
+      },
+      {
+        "entryId": "b150a96ea2e9",
+        "variantId": "default"
+      },
+      {
+        "entryId": "b6bcb28fc42c",
+        "variantId": "default"
+      },
+      {
+        "entryId": "b25f0503ec7b",
+        "variantId": "default"
+      },
+      {
+        "entryId": "347ab1665850",
+        "variantId": "default"
+      },
+      {
+        "entryId": "3bec0c93d4f7",
+        "variantId": "default"
+      }
+    ]
+  },
+  {
+    "id": "bedtime",
+    "slug": "bedtime",
+    "kind": "dhikr",
+    "readingMode": "sequence",
+    "title": "Dzikir sebelum tidur",
+    "shortDescription": "Bacaan sebelum tidur dan saat terbangun di malam hari.",
+    "description": "Pilihan dzikir sebelum tidur berdasarkan hadis shahih. Bacaan ketika terbangun di malam hari dibaca saat kondisi itu terjadi. Urutan bacaan bukan urutan wajib.",
+    "icon": "moon",
+    "items": [
+      {
+        "entryId": "fd44720bd528",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "9e3658b41188",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "bcc8221c0eac",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "6695e1d875f5",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "prayer-tasbih-setelah-shalat",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "prayer-tahmid-setelah-shalat",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "prayer-takbir-setelah-shalat",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "dua-sebelum-tidur",
+        "variantId": "bedtime"
+      },
+      {
+        "entryId": "tidur-terbangun-malam",
+        "variantId": "default"
+      }
+    ]
   },
   {
     "id": "daily-duas",
     "slug": "daily-duas",
     "kind": "dua",
     "readingMode": "single",
-    "title": "Kumpulan Do'a",
+    "title": "Do'a sehari-hari",
     "shortDescription": "Doa untuk kegiatan sehari-hari.",
     "description": "Pilihan do'a sehari-hari.",
-    "itemIds": [
-      "dua-bangun-tidur",
-      "dua-sebelum-masuk-toilet",
-      "dua-setelah-keluar-toilet",
-      "dua-keluar-rumah",
-      "dua-sebelum-tidur"
-    ],
-    "icon": "prayer-hands"
+    "icon": "prayer-hands",
+    "items": [
+      {
+        "entryId": "dua-bangun-tidur",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-sebelum-masuk-toilet",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-setelah-keluar-toilet",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-keluar-rumah",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-sebelum-makan",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-setelah-makan",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-sebelum-tidur",
+        "variantId": "default"
+      }
+    ]
+  },
+  {
+    "id": "worship-duas",
+    "slug": "worship-duas",
+    "kind": "dua",
+    "readingMode": "single",
+    "title": "Do'a seputar ibadah",
+    "shortDescription": "Doa saat adzan dan ke masjid.",
+    "description": "Doa saat adzan dan ke masjid.",
+    "icon": "prayer-hands",
+    "items": [
+      {
+        "entryId": "dua-masuk-masjid",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-keluar-masjid",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-setelah-adzan",
+        "variantId": "default"
+      }
+    ]
+  },
+  {
+    "id": "situational-duas",
+    "slug": "situational-duas",
+    "kind": "dua",
+    "readingMode": "single",
+    "title": "Do'a di berbagai keadaan",
+    "shortDescription": "Doa saat kesulitan, musibah, dan singgah.",
+    "description": "Doa saat kesulitan, musibah, dan singgah.",
+    "icon": "prayer-hands",
+    "items": [
+      {
+        "entryId": "doa-saat-kesulitan",
+        "variantId": "default"
+      },
+      {
+        "entryId": "doa-saat-musibah",
+        "variantId": "default"
+      },
+      {
+        "entryId": "3bec0c93d4f7",
+        "variantId": "stopover"
+      }
+    ]
+  },
+  {
+    "id": "travel-duas",
+    "slug": "travel-duas",
+    "kind": "dua",
+    "readingMode": "single",
+    "title": "Do'a saat perjalanan",
+    "shortDescription": "Doa keberangkatan, berkendara, dan safar.",
+    "description": "Pilihan bacaan sesuai keadaan perjalanan; bukan rangkaian wajib. Perbanyak pula doa untuk diri sendiri, keluarga, dan sesama.",
+    "icon": "prayer-hands",
+    "items": [
+      {
+        "entryId": "doa-melepas-musafir",
+        "variantId": "default"
+      },
+      {
+        "entryId": "doa-bekal-musafir",
+        "variantId": "default"
+      },
+      {
+        "entryId": "doa-menitipkan-keluarga",
+        "variantId": "default"
+      },
+      {
+        "entryId": "dua-keluar-rumah",
+        "variantId": "default"
+      },
+      {
+        "entryId": "doa-naik-kendaraan",
+        "variantId": "default"
+      },
+      {
+        "entryId": "doa-safar",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-takbir-setelah-shalat",
+        "variantId": "ascent"
+      },
+      {
+        "entryId": "prayer-tasbih-setelah-shalat",
+        "variantId": "descent"
+      },
+      {
+        "entryId": "3bec0c93d4f7",
+        "variantId": "stopover"
+      }
+    ]
   },
   {
     "id": "prayer",
@@ -86,22 +367,61 @@
     "title": "Bacaan Shalat",
     "shortDescription": "Bacaan dari takbir hingga salam.",
     "description": "Bacaan dari takbir hingga salam, termasuk Al-Fatihah, tasyahud, shalawat, dan pilihan versi doa. Urutan ini untuk belajar bacaan, bukan simulasi rakaat atau panduan fikih lengkap. Terdapat perbedaan rincian praktik; pelajari bersama guru yang tepercaya.",
-    "itemIds": [
-      "prayer-takbiratul-ihram",
-      "prayer-doa-iftitah",
-      "prayer-al-fatihah",
-      "prayer-tasbih-rukuk",
-      "prayer-bangkit-dari-rukuk",
-      "prayer-pujian-iktidal",
-      "prayer-tasbih-sujud",
-      "prayer-doa-antara-dua-sujud",
-      "prayer-tasyahud",
-      "prayer-shalawat",
-      "prayer-doa-sebelum-salam",
-      "prayer-doa-memohon-pertolongan-ibadah",
-      "prayer-salam"
-    ],
-    "icon": "book-open"
+    "icon": "book-open",
+    "items": [
+      {
+        "entryId": "prayer-takbiratul-ihram",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-doa-iftitah",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-al-fatihah",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tasbih-rukuk",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-bangkit-dari-rukuk",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-pujian-iktidal",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tasbih-sujud",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-doa-antara-dua-sujud",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tasyahud",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-shalawat",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-doa-sebelum-salam",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-doa-memohon-pertolongan-ibadah",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-salam",
+        "variantId": "default"
+      }
+    ]
   },
   {
     "id": "post-prayer",
@@ -111,15 +431,36 @@
     "title": "Dzikir setelah shalat",
     "shortDescription": "Dzikir setelah salam berdasarkan hadis shahih.",
     "description": "Dzikir setelah salam: istighfar, doa, tasbih, tahmid, takbir, dan tahlil berdasarkan hadis shahih. Rangkaian ini merupakan pilihan bacaan, bukan urutan wajib.",
-    "itemIds": [
-      "prayer-istighfar-setelah-shalat",
-      "prayer-allahumma-antas-salam",
-      "prayer-tauhid-setelah-shalat",
-      "prayer-tasbih-setelah-shalat",
-      "prayer-tahmid-setelah-shalat",
-      "prayer-takbir-setelah-shalat",
-      "prayer-tahlil-penutup-setelah-shalat"
-    ],
-    "icon": "book-open"
+    "icon": "book-open",
+    "items": [
+      {
+        "entryId": "prayer-istighfar-setelah-shalat",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-allahumma-antas-salam",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tauhid-setelah-shalat",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tasbih-setelah-shalat",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tahmid-setelah-shalat",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-takbir-setelah-shalat",
+        "variantId": "default"
+      },
+      {
+        "entryId": "prayer-tahlil-penutup-setelah-shalat",
+        "variantId": "default"
+      }
+    ]
   }
 ]

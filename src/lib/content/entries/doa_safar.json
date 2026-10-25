@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "doa-safar",
+  "slug": "doa-safar",
+  "type": "dua",
+  "title": "Doa Safar",
+  "text": {
+    "arabic": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ\nسُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ\nاللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى وَمِنَ الْعَمَلِ مَا تَرْضَى\nاللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ\nاللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ وَالْخَلِيفَةُ فِي الْأَهْلِ\nاللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ وَكَآبَةِ الْمَنْظَرِ وَسُوءِ الْمُنْقَلَبِ فِي الْمَالِ وَالْأَهْلِ",
+    "transliteration": "Allāhu akbar (3x). Subḥānallażī sakhkhara lanā hāżā wa mā kunnā lahū muqrinīn, wa innā ilā rabbinā lamunqalibūn. Allāhumma innā nas’aluka fī safarinā hāżal-birra wat-taqwā, wa minal-‘amali mā tarḍā. Allāhumma hawwin ‘alainā safaranā hāżā waṭwi ‘annā bu‘dah. Allāhumma antaṣ-ṣāḥibu fis-safari wal-khalīfatu fil-ahl. Allāhumma innī a‘ūżu bika min wa‘ṡā’is-safari wa ka’ābatil-manẓari wa sū’il-munqalabi fil-māli wal-ahl.",
+    "translation": "Allah Mahabesar (3x). Mahasuci Dia yang menundukkan kendaraan ini bagi kami, padahal kami tidak mampu menguasainya. Kepada Tuhan kami, kami akan kembali. Ya Allah, kami memohon kebajikan, takwa, dan amal yang Engkau ridai dalam perjalanan ini. Mudahkan perjalanan kami dan dekatkan jaraknya. Engkaulah pendamping dalam perjalanan dan penjaga keluarga. Aku berlindung kepada-Mu dari kesulitan perjalanan, pemandangan yang menyedihkan, serta keadaan buruk pada harta dan keluarga saat pulang."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Safar",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca saat berangkat safar setelah duduk di kendaraan. Awali dengan takbir 3x sebagaimana tertulis.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "doa-safar-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 1342 (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:1342"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

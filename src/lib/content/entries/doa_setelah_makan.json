@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "dua-setelah-makan",
+  "slug": "doa-setelah-makan",
+  "type": "dua",
+  "title": "Doa Setelah Makan",
+  "text": {
+    "arabic": "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
+    "transliteration": "Alḥamdulillāhil-lażī aṭ‘amanī hāżā wa razaqanīhi min ghairi ḥaulin minnī wa lā quwwah.",
+    "translation": "Segala puji bagi Allah yang telah memberiku makanan ini dan mengaruniakannya kepadaku tanpa daya dan kekuatan dariku."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Setelah Makan",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca setelah selesai makan.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "setelah-makan-source",
+          "type": "hadith",
+          "label": "HR. at-Tirmidzi no. 3458 (hasan)",
+          "url": "https://sunnah.com/tirmidhi:3458"
+        }
+      ],
+      "virtues": [
+        {
+          "text": "Membaca doa ini setelah makan menjadi sebab diampuninya dosa-dosa yang telah lalu.",
+          "sourceIds": ["setelah-makan-source"]
+        }
+      ],
+      "alternativeIds": []
+    }
+  ]
+}

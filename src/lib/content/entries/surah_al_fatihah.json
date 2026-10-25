@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-al-fatihah",
+  "slug": "surah-al-fatihah",
+  "type": "prayer_recitation",
+  "title": "Surah Al-Fatihah",
+  "text": {
+    "arabic": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ (1)\nٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ (2)\nٱلرَّحْمَٰنِ ٱلرَّحِيمِ (3)\nمَٰلِكِ يَوْمِ ٱلدِّينِ (4)\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ (5)\nٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ (6)\nصِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ (7)",
+    "transliteration": "Bismillāhir-raḥmānir-raḥīm. (1)\nAl-ḥamdu lillāhi rabbil-‘ālamīn. (2)\nAr-raḥmānir-raḥīm. (3)\nMāliki yaumid-dīn. (4)\nIyyāka na‘budu wa iyyāka nasta‘īn. (5)\nIhdinaṣ-ṣirāṭal-mustaqīm. (6)\nṢirāṭallażīna an‘amta ‘alaihim ghairil-maghḍūbi ‘alaihim wa laḍ-ḍāllīn. (7)",
+    "translation": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. (1)\nSegala puji bagi Allah, Tuhan seluruh alam. (2)\nYang Maha Pengasih, Maha Penyayang. (3)\nPemilik hari pembalasan. (4)\nHanya kepada-Mu kami beribadah dan hanya kepada-Mu kami memohon pertolongan. (5)\nBimbinglah kami ke jalan yang lurus. (6)\nJalan orang-orang yang telah Engkau beri nikmat, bukan jalan mereka yang dimurkai dan bukan pula mereka yang tersesat. (7)"
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Surah Al-Fatihah",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "",
+      "notes": "Tujuh ayat mengikuti penomoran Quran.com dengan basmalah sebagai ayat 1; amin bukan bagian teks surah. Hadis mendukung konteks bacaan dalam shalat, bukan sumber teks ayat atau uraian rincian fikih. Transliterasi (berhenti pada akhir ayat) dan terjemahan Indonesia merupakan olahan editorial berdasarkan teks Arab dan makna pada sumber, bukan kutipan terjemahan resmi.",
+      "sources": [
+        {
+          "id": "prayer-al-fatihah-quran",
+          "type": "quran",
+          "label": "Al-Quran, Al-Fatihah 1:1–7 — teks tujuh ayat",
+          "url": "https://quran.com/1?translations=20"
+        },
+        {
+          "id": "prayer-al-fatihah-hadith",
+          "type": "hadith",
+          "label": "Sahih al-Bukhari no. 756 — Al-Fatihah dalam shalat",
+          "url": "https://sunnah.com/bukhari:756"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

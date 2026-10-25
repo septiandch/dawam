@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "3bec0c93d4f7",
+  "slug": "doa-perlindungan-makhluk",
+  "type": "dhikr",
+  "title": "Doa Memohon Perlindungan dari Keburukan Ciptaan Allah",
+  "text": {
+    "arabic": "أَعُوْذُ بِكَلِمَاتِ اللهِ التَّآمَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+    "transliteration": "'aużu bi kalimātillahittāmāti min syarri ma khalaq",
+    "translation": "Aku berlindung dengan kalimat-kalimat Allah yang sempurna, dari kejahatan sesuatu yang diciptakan-Nya."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Memohon Perlindungan dari Keburukan Ciptaan Allah",
+      "text": null,
+      "repetitions": 3,
+      "readingInstruction": "",
+      "notes": "",
+      "sources": [
+        {
+          "id": "3bec0c93d4f7-source",
+          "type": "hadith",
+          "label": "HR. Ahmad 11/290, an-Nasa'i dalam 'Amalul Yaum wal Lailah No. 596, Shahiih at-Targhiib wat Tarhiib 1/412 No. 652, Shahiih al-Jaami 'ish Shaghiir No. 6427",
+          "url": null
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "stopover",
+      "label": "Doa Ketika Singgah",
+      "title": "Doa Ketika Singgah",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca saat singgah di suatu tempat.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "stopover-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 2708a (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:2708a"
+        }
+      ],
+      "virtues": [
+        {
+          "text": "Dilindungi dari bahaya hingga meninggalkan tempat singgah tersebut.",
+          "sourceIds": [
+            "stopover-source"
+          ]
+        }
+      ],
+      "alternativeIds": []
+    }
+  ]
+}

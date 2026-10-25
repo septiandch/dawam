@@ -32,6 +32,11 @@
   });
   const selectedLabel = $derived(variant?.label ?? entry.defaultVersionLabel ?? 'Versi utama');
   const readingInstruction = $derived(content.readingInstruction);
+  const versionStorageKey = $derived(
+    'dawam-reading-version-' +
+      entry.id +
+      (entry.variantId && entry.variantId !== 'default' ? ':' + entry.variantId : ''),
+  );
 
   onMount(() => {
     mounted = true;
@@ -41,7 +46,7 @@
     if (!mounted) return;
     let versionId = 'default';
     try {
-      const saved = localStorage.getItem('dawam-reading-version-' + entry.id);
+      const saved = localStorage.getItem(versionStorageKey);
       if (variants.some((version) => version.id === saved)) versionId = saved!;
     } catch {
       // Storage is optional; changing versions still works for the current card.
@@ -53,7 +58,7 @@
     if (versionId !== 'default' && !variants.some((version) => version.id === versionId)) return;
     selection = { entryId: entry.id, versionId };
     try {
-      localStorage.setItem('dawam-reading-version-' + entry.id, versionId);
+      localStorage.setItem(versionStorageKey, versionId);
     } catch {
       // Keep the in-memory selection when persistence is unavailable.
     }

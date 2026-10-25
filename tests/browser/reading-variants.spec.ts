@@ -1,11 +1,32 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
 
-import iftitah from '../../src/lib/content/entries/shalat-doa-iftitah.json' with { type: 'json' };
-import rukuk from '../../src/lib/content/entries/shalat-tasbih-rukuk.json' with { type: 'json' };
-import sujud from '../../src/lib/content/entries/shalat-tasbih-sujud.json' with { type: 'json' };
-import tasyahud from '../../src/lib/content/entries/shalat-tasyahud.json' with { type: 'json' };
-import antaraSujud from '../../src/lib/content/entries/shalat-doa-antara-dua-sujud.json' with { type: 'json' };
+import iftitahRecord from '../../src/lib/content/entries/shalat_doa_iftitah.json' with { type: 'json' };
+import rukukRecord from '../../src/lib/content/entries/shalat_tasbih_rukuk.json' with { type: 'json' };
+import sujudRecord from '../../src/lib/content/entries/shalat_tasbih_sujud.json' with { type: 'json' };
+import tasyahudRecord from '../../src/lib/content/entries/shalat_tasyahud.json' with { type: 'json' };
+import antaraSujudRecord from '../../src/lib/content/entries/shalat_doa_antara_sujud.json' with { type: 'json' };
 import type { ReadingEntry, ReadingText } from '../../src/lib/types/content';
+import { resolveReading } from '../../src/lib/content/resolve-reading.mjs';
+const iftitah = resolveReading(
+  { entryId: iftitahRecord.id, variantId: 'default' },
+  iftitahRecord as import('../../src/lib/types/content').ReadingRecord,
+);
+const rukuk = resolveReading(
+  { entryId: rukukRecord.id, variantId: 'default' },
+  rukukRecord as import('../../src/lib/types/content').ReadingRecord,
+);
+const sujud = resolveReading(
+  { entryId: sujudRecord.id, variantId: 'default' },
+  sujudRecord as import('../../src/lib/types/content').ReadingRecord,
+);
+const tasyahud = resolveReading(
+  { entryId: tasyahudRecord.id, variantId: 'default' },
+  tasyahudRecord as import('../../src/lib/types/content').ReadingRecord,
+);
+const antaraSujud = resolveReading(
+  { entryId: antaraSujudRecord.id, variantId: 'default' },
+  antaraSujudRecord as import('../../src/lib/types/content').ReadingRecord,
+);
 
 const entries: ReadingEntry[] = [iftitah, rukuk, sujud, tasyahud, antaraSujud] as ReadingEntry[];
 const sequence = '/read/prayer/?mode=sequence&start=shalat-tasbih-rukuk';

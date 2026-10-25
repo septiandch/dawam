@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-istighfar-setelah-shalat",
+  "slug": "dzikir-istighfar-setelah-shalat",
+  "type": "prayer_recitation",
+  "title": "Istighfar Setelah Shalat",
+  "text": {
+    "arabic": "أَسْتَغْفِرُ اللَّهَ",
+    "transliteration": "Astaghfirullāh.",
+    "translation": "Aku memohon ampun kepada Allah."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Istighfar Setelah Shalat",
+      "text": null,
+      "repetitions": 3,
+      "readingInstruction": "Dibaca 3x, lalu dilanjutkan dengan 'Allāhumma antas-salām'.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "istighfar-setelah-shalat-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 591 (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:591"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

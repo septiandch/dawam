@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-tahmid-setelah-shalat",
+  "slug": "dzikir-tahmid",
+  "type": "prayer_recitation",
+  "title": "Tahmid Setelah Shalat",
+  "text": {
+    "arabic": "الْحَمْدُ لِلَّهِ",
+    "transliteration": "Alḥamdulillāh.",
+    "translation": "Segala puji bagi Allah."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Tahmid Setelah Shalat",
+      "text": null,
+      "repetitions": 33,
+      "readingInstruction": "Dibaca 33x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tahmid-setelah-shalat-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 597a (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:597a"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "bedtime",
+      "label": "Dzikir sebelum tidur",
+      "title": "Tahmid Sebelum Tidur",
+      "text": null,
+      "repetitions": 33,
+      "readingInstruction": "Dibaca 33x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tidur-tahmid-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 5361 (Sahih al-Bukhari)",
+          "url": "https://sunnah.com/bukhari:5361"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

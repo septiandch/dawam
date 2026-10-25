@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "doa-menitipkan-keluarga",
+  "slug": "doa-menitipkan-keluarga",
+  "type": "dua",
+  "title": "Doa Menitipkan Orang Tercinta",
+  "text": {
+    "arabic": "أَسْتَوْدِعُكَ اللَّهَ الَّذِي لَا تَضِيعُ وَدَائِعُهُ",
+    "transliteration": "Astawdi‘ukallāhallażī lā taḍī‘u wadā’i‘uh.",
+    "translation": "Aku menitipkanmu kepada Allah yang tidak akan menyia-nyiakan titipan-Nya."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Menitipkan Orang Tercinta",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca saat berpisah dengan orang tercinta.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "doa-menitipkan-keluarga-source",
+          "type": "hadith",
+          "label": "HR. Ibnu Majah no. 2825 (shahih)",
+          "url": "https://sunnah.com/ibnmajah:2825"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

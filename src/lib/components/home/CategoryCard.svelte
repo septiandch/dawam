@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { Sun, Sunset, BookOpen, ArrowRight } from '@lucide/svelte';
+  import { Sun, Sunset, Moon, BookOpen, ArrowRight } from '@lucide/svelte';
 
   import type { Category } from '$lib/types/content';
 
   let { category }: { category: Category } = $props();
 
-  const icons = { sun: Sun, sunset: Sunset, 'book-open': BookOpen };
+  const icons = { sun: Sun, sunset: Sunset, moon: Moon, 'book-open': BookOpen };
   const Icon = $derived(category.icon === 'prayer-hands' ? undefined : icons[category.icon]);
 </script>
 

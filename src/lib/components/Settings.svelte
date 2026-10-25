@@ -30,6 +30,11 @@
     savePreferences();
   }
 
+  function setDarkMode(checked: boolean) {
+    preferences.darkMode = checked;
+    savePreferences();
+  }
+
   function setFontSize(value: string) {
     if (!value) return;
 
@@ -57,6 +62,10 @@
     </Dialog.Header>
 
     <div class="grid gap-5">
+      <div class="flex min-h-11 items-center justify-between gap-4">
+        <Label for="dark-mode">Mode gelap</Label>
+        <Switch id="dark-mode" checked={preferences.darkMode} onCheckedChange={setDarkMode} />
+      </div>
       <div class="flex min-h-11 items-center justify-between gap-4">
         <Label for="show-latin">Tampilkan Latin</Label>
         <Switch

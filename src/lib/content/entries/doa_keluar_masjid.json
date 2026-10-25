@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "dua-keluar-masjid",
+  "slug": "doa-keluar-masjid",
+  "type": "dua",
+  "title": "Doa Keluar Masjid",
+  "text": {
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ",
+    "transliteration": "Allāhumma innī as’aluka min faḍlik.",
+    "translation": "Ya Allah, sesungguhnya aku memohon karunia-Mu."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Keluar Masjid",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca ketika keluar masjid.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "keluar-masjid-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 713a",
+          "url": "https://sunnah.com/muslim:713a"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

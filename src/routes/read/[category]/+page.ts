@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 
 import { categories, readings } from '$lib/content';
+import { resolveReading } from '$lib/content/resolve-reading.mjs';
 
 export function entries() {
   return categories.map((category) => ({ category: category.slug }));
@@ -15,6 +16,11 @@ export function load({ params }: { params: { category: string } }) {
 
   return {
     category,
-    entries: category.itemIds.map((id) => readings.find((reading) => reading.id === id)!),
+    entries: category.items.map((item) =>
+      resolveReading(
+        item,
+        readings.find((reading) => reading.id === item.entryId)!,
+      ),
+    ),
   };
 }

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-tauhid-setelah-shalat",
+  "slug": "dzikir-tauhid-setelah-shalat",
+  "type": "prayer_recitation",
+  "title": "Dzikir Tauhid Setelah Shalat",
+  "text": {
+    "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ",
+    "transliteration": "Lā ilāha illallāhu waḥdahu lā syarīka lah, lahul-mulku wa lahul-ḥamdu wa huwa ‘alā kulli syai’in qadīr. Allāhumma lā māni‘a limā a‘ṭaita wa lā mu‘ṭiya limā mana‘ta wa lā yanfa‘u żal-jaddi minkal-jadd.",
+    "translation": "Tidak ada sesembahan yang berhak disembah selain Allah semata, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan segala pujian. Dia Mahakuasa atas segala sesuatu. Ya Allah, tidak ada yang dapat menahan pemberian-Mu atau memberi apa yang Engkau tahan. Kekayaan seseorang tidak berguna baginya di hadapan-Mu."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Dzikir Tauhid Setelah Shalat",
+      "text": null,
+      "repetitions": 1,
+      "readingInstruction": "Dibaca 1x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tauhid-setelah-shalat-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 593a (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:593a"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

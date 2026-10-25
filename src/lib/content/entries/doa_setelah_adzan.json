@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "dua-setelah-adzan",
+  "slug": "doa-setelah-adzan",
+  "type": "dua",
+  "title": "Doa Setelah Adzan",
+  "text": {
+    "arabic": "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
+    "transliteration": "Allāhumma rabba hāżihid-da‘watit-tāmmati waṣ-ṣalātil-qā’imah, āti Muḥammadanil-wasīlata wal-faḍīlah, wab‘aṡhu maqāman maḥmūdanil-lażī wa‘adtah.",
+    "translation": "Ya Allah, Rabb pemilik seruan yang sempurna ini dan shalat yang akan didirikan, berikanlah kepada Muhammad wasilah dan keutamaan, serta bangkitkanlah beliau pada kedudukan terpuji yang telah Engkau janjikan."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Setelah Adzan",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca setelah adzan, didahului dengan shalawat kepada Nabi.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "setelah-adzan-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 614 (lafaz doa setelah adzan)",
+          "url": "https://sunnah.com/bukhari:614"
+        },
+        {
+          "id": "setelah-adzan-shalawat-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 384 (shalawat sebelum memohon wasilah)",
+          "url": "https://sunnah.com/muslim:384"
+        }
+      ],
+      "virtues": [
+        {
+          "text": "Orang yang membaca doa ini setelah mendengar adzan memperoleh syafaat Nabi pada hari kiamat.",
+          "sourceIds": ["setelah-adzan-source"]
+        }
+      ],
+      "alternativeIds": []
+    }
+  ]
+}

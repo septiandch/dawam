@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "doa-saat-kesulitan",
+  "slug": "doa-saat-kesulitan",
+  "type": "dua",
+  "title": "Doa Saat Kesulitan",
+  "text": {
+    "arabic": "لَا إِلَهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ لَا إِلَهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ لَا إِلَهَ إِلَّا اللَّهُ رَبُّ السَّمَوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ",
+    "transliteration": "Lā ilāha illallāhul-‘aẓīmul-ḥalīm. Lā ilāha illallāhu rabbul-‘arsyil-‘aẓīm. Lā ilāha illallāhu rabbus-samāwāti wa rabbul-arḍi wa rabbul-‘arsyil-karīm.",
+    "translation": "Tiada sesembahan yang berhak disembah selain Allah Yang Mahaagung, Maha Penyantun. Tiada sesembahan yang berhak disembah selain Allah, Tuhan Arasy yang agung. Tiada sesembahan yang berhak disembah selain Allah, Tuhan langit, bumi, dan Arasy yang mulia."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Saat Kesulitan",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca saat mengalami kesusahan.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "doa-saat-kesulitan-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 2730a (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:2730a"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

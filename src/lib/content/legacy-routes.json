@@ -1,0 +1,17 @@
+[
+  {
+    "category": "daily-duas",
+    "slug": "doa-masuk-masjid",
+    "targetCategory": "worship-duas"
+  },
+  {
+    "category": "daily-duas",
+    "slug": "doa-keluar-masjid",
+    "targetCategory": "worship-duas"
+  },
+  {
+    "category": "daily-duas",
+    "slug": "doa-setelah-adzan",
+    "targetCategory": "worship-duas"
+  }
+]

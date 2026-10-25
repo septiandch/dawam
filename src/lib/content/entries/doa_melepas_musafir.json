@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "doa-melepas-musafir",
+  "slug": "doa-melepas-musafir",
+  "type": "dua",
+  "title": "Doa Melepas Musafir",
+  "text": {
+    "arabic": "أَسْتَوْدِعُ اللَّهَ دِينَكَ وَأَمَانَتَكَ وَخَوَاتِيمَ عَمَلِكَ",
+    "transliteration": "Astawdi‘ullāha dīnaka wa amānataka wa khawātīma ‘amalik.",
+    "translation": "Aku menitipkan kepada Allah agamamu, amanahmu, dan penutup amalmu."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Melepas Musafir",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca untuk orang yang akan bepergian.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "doa-melepas-musafir-source",
+          "type": "hadith",
+          "label": "HR. Abu Dawud no. 2600 (shahih menurut al-Albani)",
+          "url": "https://sunnah.com/abudawud:2600"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

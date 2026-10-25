@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "5df5734e5a81",
+  "slug": "dzikir-istighfar-pagi",
+  "type": "dhikr",
+  "title": "Istighfar 100x Sehari",
+  "text": {
+    "arabic": "أَسْتَغْفِرُ الله وَأَتُوْبُ إِلَيْهِ",
+    "transliteration": "Astaghfirullah wa atūbu ilaih",
+    "translation": "Aku memohon ampunan kepada Allah dan bertaubat kepada-Nya."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Istighfar 100x Sehari",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca 100x sehari",
+      "notes": "",
+      "sources": [
+        {
+          "id": "5df5734e5a81-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari/Fat-hul Baari XI/101 dan Muslim No. 2702",
+          "url": null
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

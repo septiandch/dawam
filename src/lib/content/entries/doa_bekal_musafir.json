@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "doa-bekal-musafir",
+  "slug": "doa-bekal-musafir",
+  "type": "dua",
+  "title": "Doa Memohon Bekal untuk Musafir",
+  "text": {
+    "arabic": "زَوَّدَكَ اللَّهُ التَّقْوَى وَغَفَرَ ذَنْبَكَ وَيَسَّرَ لَكَ الْخَيْرَ حَيْثُمَا كُنْتَ",
+    "transliteration": "Zawwadakallāhut-taqwā, wa ghafara żanbaka, wa yassara lakal-khaira ḥaiṡumā kunt.",
+    "translation": "Semoga Allah membekalimu dengan takwa, mengampuni dosamu, dan memudahkan kebaikan bagimu di mana pun engkau berada."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Memohon Bekal untuk Musafir",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca untuk orang yang akan bepergian.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "doa-bekal-musafir-source",
+          "type": "hadith",
+          "label": "HR. at-Tirmidzi no. 3444 (hasan)",
+          "url": "https://sunnah.com/tirmidhi:3444"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

@@ -22,20 +22,20 @@
   <p class="mb-3 text-sm leading-7 text-muted-foreground">{category.description}</p>
 
   <p class="text-[11px] leading-6 text-muted-foreground">
-    {count} bacaan · Baca dengan tenang, tanpa terburu-buru
+    {count} bacaan · Baca dengan tenang dan jelas, jangan terburu-buru
   </p>
 
   <p class="mt-8 text-xs leading-6 text-secondary-foreground">
     {#if count > 0}
       Tekan
       <span
-        class="mx-1 inline-flex items-center justify-center rounded-md bg-muted p-0.5 align-middle min-[375px]:px-1.5 min-[375px]:align-baseline"
+        class="mx-1 inline-flex items-center justify-center rounded-md bg-muted p-0.5 align-middle md:px-1.5 md:align-baseline"
       >
-        <span class="inline-flex min-[375px]:hidden">
+        <span class="inline-flex md:hidden">
           <ChevronRight class="size-4" aria-hidden="true" />
           <span class="sr-only">Berikutnya</span>
         </span>
-        <span class="hidden min-[375px]:inline">Berikutnya</span>
+        <span class="hidden md:inline">Berikutnya</span>
       </span>
       untuk mulai membaca.
     {:else}

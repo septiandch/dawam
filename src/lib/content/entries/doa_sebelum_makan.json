@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "dua-sebelum-makan",
+  "slug": "doa-sebelum-makan",
+  "type": "dua",
+  "title": "Doa Sebelum Makan",
+  "text": {
+    "arabic": "بِسْمِ اللَّهِ",
+    "transliteration": "Bismillāh.",
+    "translation": "Dengan nama Allah."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Doa Sebelum Makan",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca sebelum mulai makan.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "sebelum-makan-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 5376 (perintah menyebut nama Allah sebelum makan)",
+          "url": "https://sunnah.com/bukhari:5376"
+        },
+        {
+          "id": "sebelum-makan-virtue-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 2017a (menyebut nama Allah saat makan)",
+          "url": "https://sunnah.com/muslim:2017a"
+        }
+      ],
+      "virtues": [
+        {
+          "text": "Menyebut nama Allah sebelum makan menghalangi setan ikut menikmati makanan.",
+          "sourceIds": ["sebelum-makan-virtue-source"]
+        }
+      ],
+      "alternativeIds": []
+    }
+  ]
+}

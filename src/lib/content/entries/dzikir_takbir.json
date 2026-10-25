@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-takbir-setelah-shalat",
+  "slug": "dzikir-takbir",
+  "type": "prayer_recitation",
+  "title": "Takbir Setelah Shalat",
+  "text": {
+    "arabic": "اللَّهُ أَكْبَرُ",
+    "transliteration": "Allāhu akbar.",
+    "translation": "Allah Mahabesar."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Takbir Setelah Shalat",
+      "text": null,
+      "repetitions": 33,
+      "readingInstruction": "Dibaca 33x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "takbir-setelah-shalat-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 597a (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:597a"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "bedtime",
+      "label": "Dzikir sebelum tidur",
+      "title": "Takbir Sebelum Tidur",
+      "text": null,
+      "repetitions": 34,
+      "readingInstruction": "Dibaca 34x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tidur-takbir-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 5361 (Sahih al-Bukhari)",
+          "url": "https://sunnah.com/bukhari:5361"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "ascent",
+      "label": "Takbir Saat Menanjak",
+      "title": "Takbir Saat Menanjak",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca saat melewati jalan menanjak.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "ascent-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 2993 (Sahih al-Bukhari)",
+          "url": "https://sunnah.com/bukhari:2993"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

@@ -78,7 +78,7 @@ async function expectNoOverflow(page: Page) {
 async function expectDailyDuasCatalog(page: Page) {
   await expectReadingHeader(page, 'daily-duas', 'single');
   await expect(page.getByRole('searchbox', { name: 'Cari bacaan' })).toBeVisible();
-  await expect(page.getByRole('main').getByRole('listitem')).toHaveCount(5);
+  await expect(page.getByRole('main').getByRole('listitem')).toHaveCount(7);
   for (const link of await page.getByRole('main').getByRole('listitem').getByRole('link').all()) {
     await expect(link).toHaveAttribute('href', /^\/read\/daily-duas\/[^/?]+\/$/);
   }

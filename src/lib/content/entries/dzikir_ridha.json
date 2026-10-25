@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "885c435a1217",
+  "slug": "dzikir-ridha",
+  "type": "dhikr",
+  "title": "Pernyataan Keridhaan dengan Allah, Islam, dan Nabi Muhammad Shallallaahu 'Alaihi Wa Sallam",
+  "text": {
+    "arabic": "رَضِيْتُ بِاللهِ رَبًّا، وَبِاْلإِسْلاَمِ دِيْنًا، وَبِمُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا",
+    "transliteration": "Rodhītu billāhi robbā wa bil islāmi dīnā, wa bi muhammadin shallallāhu 'alaihi wa sallama nabiyyā",
+    "translation": "Aku ridha Allah sebagai Rabb, Islam sebagai agama dan Muhammad shallallahu 'alaihi wa sallam sebagai nabi."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Pernyataan Keridhaan dengan Allah, Islam, dan Nabi Muhammad Shallallaahu 'Alaihi Wa Sallam",
+      "text": null,
+      "repetitions": 3,
+      "readingInstruction": "",
+      "notes": "",
+      "sources": [
+        {
+          "id": "885c435a1217-source",
+          "type": "hadith",
+          "label": "HR. Ahmad IV/337, Abu Dawud No. 5072, at-Tirmidzi No. 3389, Ibnu Majah No. 3870, an-Nasa'i dalam 'Amalul Yaum wal Lailah No. 4 dan Ibnus Sunni No. 68",
+          "url": null
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}

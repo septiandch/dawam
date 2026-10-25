@@ -7,6 +7,7 @@ import {
   existsSync,
 } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { createEntry, entryFilename } from './create-entry.mjs';
 
 const root = '.content-source/data/dua-dhikr';
 
@@ -147,16 +148,18 @@ for (const [slug, title, description] of [
     }
     readings.set(id, entry);
     if (!existingIds.has(id)) {
-      if (existingSlugs.has(shortSlug)) {
-        throw new Error(`Refusing to replace existing reading slug: ${shortSlug}`);
+      const filename = entryFilename(entry, slug);
+      const canonicalSlug = filename.slice(0, -5).replaceAll('_', '-');
+      if (existingSlugs.has(canonicalSlug)) {
+        throw new Error(`Refusing to replace existing reading slug: ${canonicalSlug}`);
       }
       writeFileSync(
-        `src/lib/content/entries/${shortSlug}.json`,
-        JSON.stringify(entry, null, 2) + '\n',
+        `src/lib/content/entries/${filename}`,
+        JSON.stringify(createEntry({ ...entry, slug: canonicalSlug }), null, 2) + '\n',
         { flag: 'wx' },
       );
       existingIds.add(id);
-      existingSlugs.add(shortSlug);
+      existingSlugs.add(canonicalSlug);
     }
   }
   const existingIndex = categories.findIndex((category) => category.slug === slug);
@@ -170,7 +173,7 @@ for (const [slug, title, description] of [
       icon: slug === 'morning' ? 'sun' : 'sunset',
       kind: 'dhikr',
       readingMode: 'sequence',
-      itemIds,
+      items: itemIds.map((entryId) => ({ entryId, variantId: 'default' })),
     });
   } else {
     // Supply metadata for legacy categories without replacing edited membership or text.
@@ -187,5 +190,5 @@ for (const [slug, title, description] of [
 writeFileSync(categoriesPath, JSON.stringify(categories, null, 2) + '\n');
 
 console.log(
-  `Processed ${readings.size} unique source readings (existing files preserved); ${categories.map((c) => c.slug + ': ' + c.itemIds.length).join(', ')}`,
+  `Processed ${readings.size} unique source readings (existing files preserved); ${categories.map((c) => c.slug + ': ' + c.items.length).join(', ')}`,
 );

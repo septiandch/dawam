@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { reading } from '../helpers/content.mjs';
 
 const slugs = [
   'takbiratul-ihram',
@@ -17,12 +17,7 @@ const slugs = [
   'tahlil-penutup-setelah-shalat',
 ];
 for (const slug of slugs) {
-  const entry = JSON.parse(
-    readFileSync(
-      new URL(`../../src/lib/content/entries/shalat-${slug}.json`, import.meta.url),
-      'utf8',
-    ),
-  );
+  const entry = reading(`prayer-${slug}`);
   test(`prayer catalog opens ${slug} in the sequence`, async ({ page }) => {
     const postPrayer = slugs.indexOf(slug) > slugs.indexOf('salam');
     await page.goto(`/read/${postPrayer ? 'post-prayer' : 'prayer'}/?mode=single`);

@@ -46,10 +46,10 @@
       id={hintId}
       role="note"
       aria-label="Petunjuk pilih bacaan"
-      class="absolute left-0 top-full z-30 mt-3 w-[min(16rem,calc(100vw-5rem))] rounded-xl border bg-popover p-4 text-popover-foreground shadow-lg"
+      class="absolute right-0 top-full z-30 mt-3 w-[min(16rem,calc(100vw-5rem))] rounded-xl border bg-popover p-4 text-popover-foreground shadow-lg"
     >
       <span
-        class="absolute -top-1.5 left-4 size-3 rotate-45 border-l border-t bg-popover"
+        class="absolute -top-1.5 right-4 size-3 rotate-45 border-l border-t bg-popover"
         aria-hidden="true"
       ></span>
       <p class="text-xs leading-6">

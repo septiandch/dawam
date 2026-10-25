@@ -9,7 +9,11 @@
     readingCount,
     initialIndex = 0,
     children,
-  }: { readingCount: number; initialIndex?: number; children: Snippet<[number]> } = $props();
+  }: {
+    readingCount: number;
+    initialIndex?: number;
+    children: Snippet<[number]>;
+  } = $props();
 
   const total = $derived(readingCount + 2);
 
@@ -57,7 +61,7 @@
   class="fixed inset-x-0 bottom-0 z-20 border-t bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md"
 >
   <div
-    class="mx-auto grid max-w-200 grid-cols-[1fr_auto_1fr] items-center gap-2 px-4 py-3 md:gap-6 md:px-6"
+    class="mx-auto grid max-w-200 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 px-4 py-3 md:grid-cols-[1fr_auto_1fr] md:gap-6 md:px-6"
   >
     <Button
       variant="outline"
@@ -66,14 +70,14 @@
       onclick={() => goToCard(currentIndex - 1)}
     >
       <ChevronLeft class="size-4" />
-      <span class="sr-only min-[375px]:not-sr-only">Sebelumnya</span>
+      <span class="sr-only md:not-sr-only">Sebelumnya</span>
     </Button>
 
     <span
       role="status"
       aria-live="polite"
       aria-atomic="true"
-      class="whitespace-nowrap text-xs tabular-nums text-muted-foreground"
+      class="text-center text-xs tabular-nums text-muted-foreground"
     >
       {positionLabel}
     </span>
@@ -83,7 +87,7 @@
       disabled={currentIndex === total - 1}
       onclick={() => goToCard(currentIndex + 1)}
     >
-      <span class="sr-only min-[375px]:not-sr-only">Berikutnya</span>
+      <span class="sr-only md:not-sr-only">Berikutnya</span>
       <ChevronRight class="size-4" />
     </Button>
   </div>

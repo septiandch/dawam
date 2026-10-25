@@ -1,11 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-
-const read = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
-const category = read('../src/lib/content/categories.json').find(
-  (entry) => entry.slug === 'prayer',
-);
+import { reading, categories } from './helpers/content.mjs';
+const category = categories.find((entry) => entry.slug === 'prayer');
 const slugs = [
   'takbiratul-ihram',
   'doa-iftitah',
@@ -33,11 +29,11 @@ const postPrayerSlugs = [
 
 test('prayer catalog includes sourced recitations from opening takbir to salam in order', () => {
   assert.deepEqual(
-    category.itemIds,
+    category.items.map((item) => item.entryId),
     slugs.map((slug) => `prayer-${slug}`),
   );
   for (const slug of slugs) {
-    const entry = read(`../src/lib/content/entries/shalat-${slug}.json`);
+    const entry = reading(`prayer-${slug}`);
     assert.equal(entry.type, 'prayer_recitation');
     assert.equal(entry.id, `prayer-${slug}`);
     assert(entry.sources.some((source) => source.url?.startsWith('https://')));
@@ -45,7 +41,7 @@ test('prayer catalog includes sourced recitations from opening takbir to salam i
 });
 
 test('Al-Fatihah contains all seven numbered verses and keeps Quran provenance', () => {
-  const entry = read('../src/lib/content/entries/shalat-al-fatihah.json');
+  const entry = reading('surah-al-fatihah');
   assert.deepEqual(entry.arabic.match(/\([1-7]\)/g), [
     '(1)',
     '(2)',
@@ -59,28 +55,30 @@ test('Al-Fatihah contains all seven numbered verses and keeps Quran provenance',
 });
 
 test('iftitah preserves four independent formulas and tashahhud offers an Ibn Abbas alternative', () => {
-  const iftitah = read('../src/lib/content/entries/shalat-doa-iftitah.json');
+  const iftitah = reading('shalat-doa-iftitah');
   assert.deepEqual(
     iftitah.variants.map((version) => version.id),
     ['subhanaka-allahumma', 'wajjahtu-wajhiya', 'allahu-akbar-kabira'],
   );
-  const tasyahud = read('../src/lib/content/entries/shalat-tasyahud.json');
+  const tasyahud = reading('shalat-tasyahud');
   assert(tasyahud.variants.some((version) => version.id === 'ibn-abbas'));
 });
 
 test('post-prayer dhikr has a separate collection with sourced repetition counts', () => {
-  const postPrayer = read('../src/lib/content/categories.json').find(
-    (entry) => entry.slug === 'post-prayer',
-  );
+  const postPrayer = categories.find((entry) => entry.slug === 'post-prayer');
   assert.deepEqual(
-    postPrayer.itemIds,
+    postPrayer.items.map((item) => item.entryId),
     postPrayerSlugs.map((slug) => `prayer-${slug}`),
   );
   assert.equal(postPrayer.kind, 'prayer_recitation');
   assert.equal(postPrayer.readingMode, 'sequence');
-  assert(postPrayer.itemIds.every((id) => !category.itemIds.includes(id)));
+  assert(
+    postPrayer.items
+      .map((item) => item.entryId)
+      .every((id) => !category.items.map((item) => item.entryId).includes(id)),
+  );
   const afterSalam = postPrayerSlugs;
-  const entries = afterSalam.map((slug) => read(`../src/lib/content/entries/shalat-${slug}.json`));
+  const entries = afterSalam.map((slug) => reading(`prayer-${slug}`));
   for (const entry of entries) {
     assert.match(entry.arabic, /[\u0600-\u06ff]/u);
     assert(!entry.arabic.includes('?'));

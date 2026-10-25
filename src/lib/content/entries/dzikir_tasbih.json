@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "id": "prayer-tasbih-setelah-shalat",
+  "slug": "dzikir-tasbih",
+  "type": "prayer_recitation",
+  "title": "Tasbih Setelah Shalat",
+  "text": {
+    "arabic": "سُبْحَانَ اللَّهِ",
+    "transliteration": "Subḥānallāh.",
+    "translation": "Mahasuci Allah."
+  },
+  "defaultVariantId": "default",
+  "variants": [
+    {
+      "id": "default",
+      "label": "Versi utama",
+      "title": "Tasbih Setelah Shalat",
+      "text": null,
+      "repetitions": 33,
+      "readingInstruction": "Dibaca 33x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tasbih-setelah-shalat-source",
+          "type": "hadith",
+          "label": "HR. Muslim no. 597a (Sahih Muslim)",
+          "url": "https://sunnah.com/muslim:597a"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "bedtime",
+      "label": "Dzikir sebelum tidur",
+      "title": "Tasbih Sebelum Tidur",
+      "text": null,
+      "repetitions": 33,
+      "readingInstruction": "Dibaca 33x.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "tidur-tasbih-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 5361 (Sahih al-Bukhari)",
+          "url": "https://sunnah.com/bukhari:5361"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    },
+    {
+      "id": "descent",
+      "label": "Tasbih Saat Menurun",
+      "title": "Tasbih Saat Menurun",
+      "text": null,
+      "repetitions": null,
+      "readingInstruction": "Dibaca saat melewati jalan menurun.",
+      "notes": "",
+      "sources": [
+        {
+          "id": "descent-source",
+          "type": "hadith",
+          "label": "HR. al-Bukhari no. 2993 (Sahih al-Bukhari)",
+          "url": "https://sunnah.com/bukhari:2993"
+        }
+      ],
+      "virtues": [],
+      "alternativeIds": []
+    }
+  ]
+}
