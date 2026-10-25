@@ -1,19 +1,14 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { RefreshCw, Search, X, ArrowRight } from '@lucide/svelte';
+  import { Search, X, ArrowRight } from '@lucide/svelte';
 
   import AppFooter from '$lib/components/AppFooter.svelte';
   import AppHeader from '$lib/components/AppHeader.svelte';
   import CategoryCard from '$lib/components/home/CategoryCard.svelte';
-  import InstallCard from '$lib/components/home/InstallCard.svelte';
-  import { Button } from '$lib/components/ui/button';
+  import InstallAction from '$lib/components/home/InstallAction.svelte';
 
   import { categories, readings } from '$lib/content';
   import { createSearchIndex, searchReadings } from '$lib/content/search.mjs';
   import { categoryGroups } from '$lib/content/category-groups';
-  import { applyUpdate, initInstall, install, installApp } from '$lib/install.svelte';
-
-  onMount(() => initInstall());
 
   let search = $state('');
   let searchInput: HTMLInputElement;
@@ -115,23 +110,7 @@
     {/if}
   </div>
 
-  {#if install.ready && !install.installed}
-    <InstallCard
-      canInstall={!!install.promptEvent}
-      installing={install.installing}
-      oninstall={installApp}
-    />
-  {:else if install.ready && install.installed && install.update}
-    <div class="mt-8 text-center">
-      <Button
-        variant="secondary"
-        onclick={applyUpdate}
-        class="h-auto min-h-11 whitespace-normal text-xs"
-      >
-        <RefreshCw class="size-4" /> Versi baru tersedia. Perbarui aplikasi
-      </Button>
-    </div>
-  {/if}
+  <InstallAction />
 </main>
 
 <AppFooter />

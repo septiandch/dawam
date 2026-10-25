@@ -15,10 +15,9 @@
   } = $props();
 </script>
 
-<div class="mt-8 text-center">
+<div>
   {#if canInstall}
     <Button
-      variant="secondary"
       onclick={oninstall}
       disabled={installing}
       class="h-auto min-h-11 whitespace-normal text-xs"
@@ -29,7 +28,6 @@
     <Dialog.Root>
       <Dialog.Trigger
         class={buttonVariants({
-          variant: 'secondary',
           class: 'h-auto min-h-11 whitespace-normal text-xs',
         })}
       >
